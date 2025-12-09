@@ -1,5 +1,4 @@
-const AI_API_URL = import.meta.env.VITE_AI_SERVER_URL as string | undefined;
-const API_ENDPOINT = AI_API_URL || '/api';
+const AI_API_URL = import.meta.env.AI_SERVER_URL as string | undefined;
 
 interface Message {
   role: 'system' | 'user' | 'assistant';
@@ -41,7 +40,7 @@ export const aiService = {
     },
   ): Promise<string> {
     try {
-      const response = await fetch(API_ENDPOINT, {
+      const response = await fetch(`${AI_API_URL}`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
