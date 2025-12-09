@@ -37,10 +37,10 @@ import zh_footer from './assets/lang/zh/footer.json';
 import zh_page from './assets/lang/zh/page.json';
 import zh_chatbot from './assets/lang/zh/chat-bot.json';
 
-import zhtw_navbar from './assets/lang/zh-TW/navbar.json';
-import zhtw_footer from './assets/lang/zh-TW/footer.json';
-import zhtw_chatbot from './assets/lang/zh-TW/chat-bot.json';
-import zhtw_page from './assets/lang/zh-TW/page.json';
+import zhtw_navbar from './assets/lang/zh-tw/navbar.json';
+import zhtw_footer from './assets/lang/zh-tw/footer.json';
+import zhtw_chatbot from './assets/lang/zh-tw/chat-bot.json';
+import zhtw_page from './assets/lang/zh-tw/page.json';
 
 const resources = {
   de: { navbar: de_navbar, footer: de_footer, 'chat-bot': de_chatbot, page: de_page },
