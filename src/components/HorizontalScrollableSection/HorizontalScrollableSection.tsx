@@ -3,17 +3,14 @@ import { useRef, useState, useEffect, type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface HorizontalScrollableProps {
-  bgGradient?: string;
   cardsWidth?: string;
   cardsHeight?: string;
-  needsDivider?: boolean;
 }
 
 export default function HorizontalScrollableSection({
-  bgGradient,
+  
   cardsWidth = '400px',
   cardsHeight = 'auto',
-  needsDivider = true,
 }: Readonly<HorizontalScrollableProps>): JSX.Element {
   const { t } = useTranslation();
   const titles = t('HorizontalScrollableSection.scrollableSection.titles', { returnObjects: true }) as string[];

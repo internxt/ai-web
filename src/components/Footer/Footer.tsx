@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from 'react';
 import { Transition, Disclosure } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
@@ -12,11 +13,15 @@ import GDPRLogo from '../../assets/images/GDPR.png';
 import appStoreLogo from '../../assets/images/AppStore.png';
 import playStoreLogo from '../../assets/images/GooglePlay.png';
 import qr from '../../assets/images/qr.png';
+interface PlatformLinks {
+  iPhone: string;
+  Android: string;
+}
 
 export default function Footer({ lang = 'en', hideNewsletter = false, darkMode = false }) {
   const { t } = useTranslation('footer');
   const [email, setEmail] = useState('');
-  const [platforms, setPlatforms] = useState(null);
+  const [platforms, setPlatforms] = useState<PlatformLinks | null>(null);
 
   const year = new Date().getFullYear();
 
@@ -29,7 +34,7 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
       .catch((err) => console.error('Error fetching platforms:', err));
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     try {
@@ -55,7 +60,7 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
     }
   };
 
-  const getImage = (path) => {
+  const getImage = (path: string) => {
     return path;
   };
 
