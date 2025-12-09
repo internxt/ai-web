@@ -23,6 +23,7 @@ const MessageList: React.FC = () => {
     <div
       ref={messagesContainerRef}
       className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-10 lg:px-20 pt-8`}
+       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       {!hasStartedChat ? (
         <div className="flex flex-col items-center w-full pb-4">
