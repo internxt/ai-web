@@ -1,4 +1,7 @@
-const AI_API_URL = import.meta.env.AI_SERVER_URL as string;
+
+
+
+const AI_API_URL= 'https://backendai.internxt.com/';
 
 interface Message {
   role: 'system' | 'user' | 'assistant';
