@@ -1,5 +1,5 @@
-const AI_API_URL = import.meta.env.VITE_AI_API_URL as string | undefined;
-const API_ENDPOINT = AI_API_URL || 'http://localhost:8787';
+const AI_API_URL = import.meta.env.AI_SERVER_URL as string | undefined;
+const API_ENDPOINT = AI_API_URL || '/api';
 
 interface Message {
   role: 'system' | 'user' | 'assistant';

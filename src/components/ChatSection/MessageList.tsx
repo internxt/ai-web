@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
+import { parseMarkdown } from '../../utils/format-text';
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -38,11 +39,15 @@ const MessageList: React.FC = () => {
           {messages.map((msg, index) => (
             <div key={index} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div
-                className={`p-4 rounded-lg max-w-[80%] break-words whitespace-pre-wrap ${
-                  msg.type === 'user' ? 'bg-neutral-17 text-gray-100' : ' text-gray-900'
+                className={`p-4 rounded-lg max-w-[80%] ${
+                  msg.type === 'user' ? 'bg-neutral-17 text-gray-100' : 'text-gray-100'
                 }`}
               >
-                {msg.text}
+                {msg.type === 'user' ? (
+                  <div className="break-words whitespace-pre-wrap">{msg.text}</div>
+                ) : (
+                  <div className="break-words">{parseMarkdown(msg.text)}</div>
+                )}
               </div>
             </div>
           ))}
