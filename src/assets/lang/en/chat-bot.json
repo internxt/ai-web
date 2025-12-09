@@ -1,0 +1,18 @@
+{
+  "HelloText": "Hello!\nWhat would you like to ask today?",
+  "SearchBar": "Ask anything",
+  "Terms": {
+    "text": "By using Internxt AI, you agree to our",
+    "blueText": "Terms"
+  },
+  "Info": "Your data stays private. All chats are stored locally on your device.",
+  "Cta": "Chat in privacy",
+  "Newchat": "New chat",
+  "Chats": "Chats",
+  "InfoCard": "Your data is stored locally. Deleting browser cache will erase chat history.",
+  "Tools": {
+    "Rename": "Rename",
+    "Delete": "Delete"
+  },
+  "DailyLimit": "Daily limit reached. Come back tomorrow!"
+}

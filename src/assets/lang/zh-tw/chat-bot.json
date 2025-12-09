@@ -1,0 +1,18 @@
+{
+  "HelloText": "你好！\n今天想問什麼？",
+  "SearchBar": "隨意提問",
+  "Terms": {
+    "text": "使用 Internxt AI 即代表您同意我們的",
+    "blueText": "條款"
+  },
+  "Info": "您的資料保有隱私。所有聊天記錄皆儲存於您的本地裝置上。",
+  "Cta": "私密聊天",
+  "Newchat": "新對話",
+  "Chats": "聊天列表",
+  "InfoCard": "您的資料儲存於本地。清除瀏覽器快取將會刪除聊天記錄。",
+  "Tools": {
+    "Rename": "重新命名",
+    "Delete": "刪除"
+  },
+  "DailyLimit": "已達每日上限。請明天再來！"
+}

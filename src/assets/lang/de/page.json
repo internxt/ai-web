@@ -1,0 +1,124 @@
+{
+  "BuildToKeepPrivateSection": {
+    "title_mobile": "Internxt AI wurde entwickelt,\n um Ihre\n Gespräche **privat** zu halten",
+    "title_desktop": "Internxt AI wurde entwickelt, um Ihre\n Gespräche **privat** zu halten",
+    "titles": ["KI, die für Ihre Privatsphäre entwickelt wurde", "Entwickelt im Sinne der Internxt-Mission"],
+    "descriptions": [
+      "Künstliche Intelligenz soll Ihr Leben einfacher, produktiver und privat machen. Dafür gibt es Internxt AI. Wir haben dies für Sie entwickelt, damit Sie alle Vorteile der KI genießen können, ohne die Privatsphäre oder Sicherheit Ihrer Daten zu gefährden.",
+      "Gemini, ChatGPT und andere Sprachmodelle sammeln Ihre Daten zu ihrem eigenen Vorteil. Wir haben die KI von Internxt zu Ihrem Vorteil entwickelt. Zusammen mit Internxt Drive, Meet, Mail und VPN trägt Internxt AI dazu bei, unsere Mission voranzutreiben, ein ethisches und privateres Internet zu schaffen, das Ihnen nützt."
+    ]
+  },
+  "AccordionSection": {
+    "titles": ["Volle Kontrolle", "Geschützt", "Niemals für maschinelles Lernen"],
+    "descriptions": [
+      "Die KI-Assistenten der großen Technologieunternehmen sammeln Ihre Daten, verwenden Ihre Chats für das KI-Training und erlauben es Menschen, Ihre Unterhaltungen zu lesen und zu überprüfen. Mit Internxt AI können keine Ihrer Chats eingesehen, geteilt oder zum Trainieren der KI verwendet werden. Keine Ihrer Daten oder Unterhaltungen kann eingesehen, geteilt oder zur Verfolgung Ihrer Online-Aktivitäten verwendet werden.",
+      "Niemand, auch Internxt nicht, kann auf Ihren Chat-Verlauf zugreifen. Wir ermöglichen dies dank der Zero-Knowledge-Verschlüsselung, die wir in allen unseren Diensten anwenden. Niemand außer Ihnen hat Zugriff auf Ihre Dateien – auch Internxt nicht. Alle Ihre Chats bleiben privat und vollständig unter Ihrer Kontrolle.",
+      "Die KI-Plattformen der großen Technologieunternehmen verbessern ihre Systeme, indem sie Ihre Interaktionen für Training und Verhaltensanalysen nutzen. Internxt AI verwendet Ihre Nachrichten niemals, um Modelle zu lehren oder zu verfeinern. Wir konzentrieren uns darauf, genaue, zuverlässige Unterstützung zu bieten, ohne Ihre Privatsphäre zu gefährden oder Ihre Informationen als Trainingsmaterial zu verwenden."
+    ]
+  },
+  "HorizontalScrollableSection": {
+    "title": "Wie hält Internxt AI Ihre Unterhaltungen privat?",
+    "scrollableSection": {
+      "titles": [
+        "Nur Sie sehen Ihre Chats",
+        "Nur Sie haben Zugriff",
+        "Technologie, die Sie überprüfen können",
+        "In Europa entwickelt"
+      ],
+      "descriptions": [
+        "Bei anderen KI-Assistenten lesen menschliche Prüfer einige aufgezeichnete Diskussionen, um ihre KI zu verbessern. Bei Internxt werden keine Ihrer Chats oder Protokolle auf unseren Servern gespeichert und können nicht eingesehen, geteilt oder zur Verfolgung oder Profilerstellung verwendet werden.",
+        "Chatten Sie mit vollem Vertrauen, da alle Chats und Unterhaltungen direkt auf Ihrem Gerät mit Zero-Knowledge-Verschlüsselung geschützt und gesperrt sind. Nicht einmal Internxt kann Ihre Chats lesen.",
+        "Wie alles bei Internxt ist unser KI-Modell vollständig Open Source. Jeder kann unsere Plattform als sicher und privat verifizieren, um zu bestätigen, dass wir Ihre Daten niemals zum Trainieren von LLMs verwenden.",
+        "Internxt hat seinen Sitz in Valencia, Spanien, und unterliegt daher der DSGVO (GDPR), was Ihnen die Kontrolle gibt, Ihre Daten jederzeit zu löschen. Nichts wird an Dritte, Regierungen oder andere weitergegeben."
+      ]
+    }
+  },
+  "ComparisonSection": {
+    "title": "Private KI für vertrauliche Chats entwickelt",
+    "descriptions": "Internxt AI bietet Ihnen alle Vorteile von KI-Chatbots, ohne die Privatsphäre Ihrer Daten oder Ihrer Unterhaltungen zu gefährden.",
+    "table": {
+      "competitors": ["Internxt AI", "Open AI", "Gemini", "Copilot", "Deepseek"],
+      "rows": [
+        {
+          "feature": "Verwendet Ihre Daten niemals zum Trainieren der KI",
+          "Internxt AI": "Ja",
+          "OpenAI": "Nein",
+          "Gemini": "Nein",
+          "Copilot": "Nein",
+          "Deepseek": "Nein"
+        },
+        {
+          "feature": "Zero-Access-Modell (Null-Zugriff)",
+          "Internxt AI": "Ja",
+          "OpenAI": "Nein",
+          "Gemini": "Nein",
+          "Copilot": "Nein",
+          "Deepseek": "Nein"
+        },
+        {
+          "feature": "Protokolliert Ihre Chats nicht",
+          "Internxt AI": "Ja",
+          "OpenAI": "Nein",
+          "Gemini": "Nein",
+          "Copilot": "Nein",
+          "Deepseek": "Nein"
+        },
+        {
+          "feature": "Kostenlos und Open Source",
+          "Internxt AI": "Ja",
+          "OpenAI": "Nein",
+          "Gemini": "Nein",
+          "Copilot": "Nein",
+          "Deepseek": "Nein"
+        },
+        {
+          "feature": "Keine E-Mail oder Abonnement erforderlich",
+          "Internxt AI": "Ja",
+          "OpenAI": "Nein",
+          "Gemini": "Nein",
+          "Copilot": "Nein",
+          "Deepseek": "Nein"
+        }
+      ]
+    }
+  },
+  "FaqSection": {
+    "title": "Fragen? Wir haben Antworten",
+    "faq": [
+      {
+        "question": "Was ist der beste private KI-Chat-Assistent?",
+        "answer": [
+          "Internxt ist der beste sichere KI-Chat zum Schutz Ihrer Online-Privatsphäre, dank Zero-Knowledge-Verschlüsselung, um Ihre Unterhaltungen sicher und nur für Sie zugänglich zu halten. Alle Ihre Daten sind auf Ihrem Gerät gesperrt und verwaltet, sodass niemand, auch Internxt nicht, auf Ihre Chats zugreifen kann."
+        ]
+      },
+      {
+        "question": "Kann ich diesen KI-Chat ohne ein Internxt-Konto nutzen?",
+        "answer": [
+          "Ja, unser privater KI-Assistent ist kostenlos verfügbar, und Sie können ihn nutzen, ohne sich anzumelden oder ein Internxt-Konto zu erstellen, was einen schnellen und einfachen Zugriff ermöglicht, wann immer Sie ihn benötigen."
+        ]
+      },
+      {
+        "question": "Wie ist Internxt im Vergleich zu ChatGPT, Gemini oder Copilot?",
+        "answer": [
+          "Internxt AI ist eine Alternative zu den KI-Assistenten der großen Technologieunternehmen, die zum Schutz Ihrer Datensicherheit entwickelt wurde. Keiner Ihrer Chats wird gespeichert oder zum Trainieren von Sprachmodellen verwendet. Im Gegensatz zu anderen KI-Assistenten werden keine Ihrer Chats oder Daten an Dritte weitergegeben."
+        ]
+      },
+      {
+        "question": "Ist Internxt AI ein sicherer Chat-Assistent?",
+        "answer": [
+          "Ja, dank Zero-Access-Verschlüsselung und der strikten No-Logs-Richtlinie von Proton. Ihre Daten bleiben auf Ihrem Gerät, und Ihre Unterhaltungen werden nicht zum Trainieren verwendet, sodass Ihre Chats absolut privat und nur für Ihre Augen bestimmt sind."
+        ]
+      },
+      {
+        "question": "Lernt die KI aus meinen Unterhaltungen?",
+        "answer": [
+          "Nein. Alles, was Sie mit unserem sicheren KI-Assistenten teilen, bleibt vollständig privat. Ihre Unterhaltungen werden niemals gespeichert, verfolgt oder zum Trainieren des Systems verwendet und nicht an Dritte weitergegeben. Sie haben die volle Kontrolle über Ihre Daten, sodass Sie frei chatten können, in dem Wissen, dass Ihre Informationen sicher bleiben."
+        ]
+      },
+      {
+        "question": "Welche Sprachen versteht Internxt AI?",
+        "answer": ["Prüfen, wenn in Entwicklung"]
+      }
+    ]
+  }
+}

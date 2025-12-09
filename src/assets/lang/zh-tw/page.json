@@ -1,0 +1,119 @@
+{
+  "BuildToKeepPrivateSection": {
+    "title_mobile": "Internxt AI 的设计初衷是\n 让你的对话保持**私密**",
+    "title_desktop": "Internxt AI 的设计初衷是让你的\n 对话保持**私密**",
+    "titles": ["為您的隱私而設計的 AI", "秉持 Internxt 的使命而建"],
+    "descriptions": [
+      "人工智慧應該讓您的生活更輕鬆、更有效率、更私密。為此，我們為您準備了 Internxt AI。我們設計它是為了讓您享受 AI 的所有好處，同時不損害您的數據隱私或安全。",
+      "Gemini、ChatGPT 和其他語言模型收集您的數據以圖利它們。我們設計 Internxt 的 AI 是為了您的利益。Internxt AI 與 Internxt 雲碟 (Drive)、會議 (Meet)、郵件 (Mail) 和 VPN 一起，幫助我們推動使命，建立一個道德且更私密的網路，讓您受益。"
+    ]
+  },
+  "AccordionSection": {
+    "titles": ["完全控制", "受保護", "絕不用於機器學習"],
+    "descriptions": [
+      "大型科技公司的 AI 助手會收集您的數據，使用您的聊天記錄進行 AI 訓練，並允許人類閱讀和審查您的對話。使用 Internxt AI，您的任何聊天記錄都不能被查看、分享或用於訓練 AI。您的任何數據或對話都不能被查看、分享或用於追蹤您的網路活動。",
+      "沒有人，包括 Internxt，可以存取您的聊天記錄。我們透過應用於所有服務的零知識加密技術實現了這一點。除了您之外，沒有人可以存取您的檔案 — 包括 Internxt。您的所有聊天記錄均保持私密，完全在您的控制之下。",
+      "大型科技公司的 AI 平台透過使用您的互動進行訓練和行為分析來改進其系統。Internxt AI 絕不會使用您的訊息來教導或改進模型。我們專注於提供準確、可靠的協助，同時不損害您的隱私或將您的資訊用作訓練材料。"
+    ]
+  },
+  "HorizontalScrollableSection": {
+    "title": "Internxt AI 如何保持您的對話私密？",
+    "scrollableSection": {
+      "titles": ["只有您能看到您的聊天記錄", "只有您擁有存取權限", "您可以驗證的技術", "於歐洲建立"],
+      "descriptions": [
+        "對於其他 AI 助手，人類審查員會閱讀一些記錄的討論來改進他們的 AI。使用 Internxt，您的任何聊天記錄或日誌都不會保存在我們的伺服器上，也不能被查看、分享或用於追蹤或描繪您的個人資料。",
+        "請完全放心地聊天，因為所有聊天記錄和對話都受到保護，並透過零知識加密直接鎖定在您的裝置上。甚至連 Internxt 也無法閱讀您的聊天記錄。",
+        "如同 Internxt 的所有產品一樣，我們的 AI 模型是完全開源的。任何人都可以驗證我們的平台是安全且私密的，以支持我們絕不會使用您的數據來訓練大型語言模型 (LLMs)。",
+        "Internxt 總部位於西班牙瓦倫西亞，因此我們受歐盟《一般資料保護規則》(GDPR) 的約束，讓您隨時可以控制刪除您的數據。資訊不會與第三方、政府或任何其他人共享。"
+      ]
+    }
+  },
+  "ComparisonSection": {
+    "title": "為機密聊天而設計的私人 AI",
+    "descriptions": "Internxt AI 為您提供 AI 聊天機器人的所有優點，同時不損害您的數據或對話的隱私。",
+    "table": {
+      "competitors": ["Internxt AI", "Open AI", "Gemini", "Copilot", "Deepseek"],
+      "rows": [
+        {
+          "feature": "絕不使用您的數據來訓練 AI",
+          "Internxt AI": "是",
+          "OpenAI": "否",
+          "Gemini": "否",
+          "Copilot": "否",
+          "Deepseek": "否"
+        },
+        {
+          "feature": "零存取模型",
+          "Internxt AI": "是",
+          "OpenAI": "否",
+          "Gemini": "否",
+          "Copilot": "否",
+          "Deepseek": "否"
+        },
+        {
+          "feature": "不記錄您的聊天記錄",
+          "Internxt AI": "是",
+          "OpenAI": "否",
+          "Gemini": "否",
+          "Copilot": "否",
+          "Deepseek": "否"
+        },
+        {
+          "feature": "免費且開源",
+          "Internxt AI": "是",
+          "OpenAI": "否",
+          "Gemini": "否",
+          "Copilot": "否",
+          "Deepseek": "否"
+        },
+        {
+          "feature": "無需電子郵件或訂閱",
+          "Internxt AI": "是",
+          "OpenAI": "否",
+          "Gemini": "否",
+          "Copilot": "否",
+          "Deepseek": "否"
+        }
+      ]
+    }
+  },
+  "FaqSection": {
+    "title": "問題？我們有答案",
+    "faq": [
+      {
+        "question": "最好的私人 AI 聊天助手是什麼？",
+        "answer": [
+          "Internxt 是最好的安全 AI 聊天助手，透過零知識加密來保護您的網路隱私，確保您的對話安全且只有您可以存取。您的所有數據都在您的裝置上被鎖定和管理，因此沒有人，包括 Internxt，可以存取您的聊天記錄。"
+        ]
+      },
+      {
+        "question": "我可以不用 Internxt 帳戶使用這個 AI 聊天嗎？",
+        "answer": [
+          "是的，我們的私人 AI 助手免費提供，您可以無需登入或建立 Internxt 帳戶即可使用它，以便在您需要時快速、輕鬆地存取。"
+        ]
+      },
+      {
+        "question": "Internxt 與 ChatGPT、Gemini 或 Copilot 相比如何？",
+        "answer": [
+          "Internxt AI 是大型科技公司 AI 助手的替代品，旨在保護您的數據安全。您的任何聊天記錄都不會被儲存或用於訓練語言模型。與其他 AI 助手不同，您的任何聊天記錄或數據都不會與第三方共享。"
+        ]
+      },
+      {
+        "question": "Internxt AI 是一個安全的聊天助手嗎？",
+        "answer": [
+          "是的，零存取加密和 Proton 嚴格的無日誌政策。您的數據保留在您的裝置上，您的對話不會用於訓練我，因此您的聊天記錄完全私密，只有您自己可見。"
+        ]
+      },
+      {
+        "question": "AI 會從我的對話中學習嗎？",
+        "answer": [
+          "不會。您與我們安全的 AI 助手分享的一切都保持完全私密。您的對話絕不會被儲存、追蹤或用於訓練系統，也不會與任何第三方共享。您對您的數據擁有完全控制權，因此您可以自由聊天，知道您的資訊保持安全。"
+        ]
+      },
+      {
+        "question": "Internxt AI 懂哪些語言？",
+        "answer": ["在開發時確認"]
+      }
+    ]
+  }
+}

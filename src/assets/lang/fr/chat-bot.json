@@ -1,0 +1,18 @@
+{
+  "HelloText": "Bonjour !\nQue souhaitez-vous demander aujourd'hui ?",
+  "SearchBar": "Demandez n'importe quoi",
+  "Terms": {
+    "text": "En utilisant Internxt AI, vous acceptez nos",
+    "blueText": "Conditions"
+  },
+  "Info": "Vos données restent privées. Tous les chats sont stockés localement sur votre appareil.",
+  "Cta": "Discuter en privé",
+  "Newchat": "Nouveau chat",
+  "Chats": "Chats",
+  "InfoCard": "Vos données sont stockées localement. Vider le cache du navigateur effacera l'historique des chats.",
+  "Tools": {
+    "Rename": "Renommer",
+    "Delete": "Supprimer"
+  },
+  "DailyLimit": "Limite quotidienne atteinte. Revenez demain !"
+}

@@ -1,0 +1,24 @@
+{
+  "links": {
+    "products": "Продукты",
+    "about": "О нас",
+    "ourValues": "Наши ценности",
+    "privacy": "Конфиденциальность",
+    "pricing": "Цены",
+    "login": "Войти",
+    "getStarted": "Получить Internxt",
+    "business": "Для бизнеса"
+  },
+  "products": {
+    "drive": "Internxt Drive",
+    "antivirus": "Internxt Antivirus",
+    "vpn": "Internxt VPN",
+    "cleaner": "Internxt Cleaner",
+    "meet": "Internxt Meet"
+  },
+  "ourValues": {
+    "privacy": "Конфиденциальность",
+    "openSource": "Открытый исходный код",
+    "sustainability": "Устойчивость"
+  }
+}

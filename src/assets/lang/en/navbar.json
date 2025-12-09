@@ -1,0 +1,24 @@
+{
+  "links": {
+    "products": "Products",
+    "about": "About Us",
+    "ourValues": "Our Values",
+    "privacy": "Privacy",
+    "pricing": "Pricing",
+    "login": "Log in",
+    "getStarted": "Get Internxt",
+    "business": "Business"
+  },
+  "products": {
+    "drive": "Internxt Drive",
+    "antivirus": "Internxt Antivirus",
+    "vpn": "Internxt VPN",
+    "cleaner": "Internxt Cleaner",
+    "meet": "Internxt Meet"
+  },
+  "ourValues": {
+    "privacy": "Privacy",
+    "openSource": "Open Source",
+    "sustainability": "Sustainability"
+  }
+}

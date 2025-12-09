@@ -1,0 +1,95 @@
+{
+  "DownloadApp": {
+    "title": "Descarga Internxt",
+    "description": "Gestiona de tus archivos en un almacenamiento seguro en la nube usando la aplicación móvil para iOS o Android."
+  },
+  "NewsletterSection": {
+    "title": "Newsletter",
+    "description": "¿Quieres saber de nosotros cuando lancemos nuevos productos? Introduce tu correo y te informaremos.",
+    "input": "Tu correo",
+    "cta": "Suscribirse",
+    "privacy": "Al suscribirte aceptas nuestra",
+    "privacyLink": "política de privacidad."
+  },
+  "FooterSection": {
+    "comingSoon": "Próximamente",
+    "new": "Nuevo",
+    "copyright": { "line1": "Copyright © ", "line2": ", Internxt Universal Technologies SL" },
+    "sections": {
+      "products": {
+        "title": "Productos",
+        "drive": "Internxt Drive",
+        "objStorage": "Internxt S3",
+        "antivirus": "Internxt Antivirus",
+        "send": "Internxt Send",
+        "vpn": "Internxt VPN",
+        "cleaner": "Internxt Cleaner",
+        "meet": "Internxt Meet",
+        "business": "Internxt para Empresas",
+        "family": "Internxt para Familias",
+        "pricing": "Precios"
+      },
+      "company": {
+        "title": "Compañía",
+        "about": "Sobre Nosotros",
+        "privacy": "Privacidad",
+        "security": "Seguridad",
+        "openSource": "Código abierto",
+        "legal": "Legal",
+        "sustainability": "Sostenibilidad"
+      },
+      "join": {
+        "title": "Únete",
+        "signup": "Crear cuenta",
+        "login": "Iniciar sesión",
+        "support": "Soporte",
+        "whitePaper": "White Paper",
+        "github": "GitHub",
+        "affiliates": "Afiliados"
+      },
+      "resources": {
+        "title": "Recursos",
+        "blog": "Blog",
+        "comparison": "Comparación de Servicios en la Nube",
+        "pCloudAlternative": "Alternativa a pCloud",
+        "dropboxAlternative": "Alternativa a Dropbox",
+        "megaAlternative": "Alternativa a Mega",
+        "koofrAlternative": "Alternativa a Koofr",
+        "icedriveAlternative": "Alternativa a Icedrive",
+        "onedriveAlternative": "Alternativa a OneDrive",
+        "googleDriveAlternative": "Alternativa a Google Drive",
+        "drimeAlternative": "Alternativa a Drime",
+        "degooAlternative": "Alternativa a Degoo",
+        "fileJumpAlternative": "Alternativa a FileJump",
+        "elephantDriveAlternative": "Alternativa a ElephantDrive",
+        "whatGoogleKnowsAboutMe": "Que sabe Google de ti",
+        "WebDAV": "CLI & WebDAV",
+        "nas": "NAS",
+        "coupons": "Cupones",
+        "reviews": "Reseñas"
+      },
+      "tools": {
+        "title": "Herramientas gratuitas",
+        "byteConverter": "Convertidor de Unidades",
+        "temporaryEmail": "Correo Temporal",
+        "passwordChecker": "Comprobador de Contraseñas",
+        "fileVirusScan": "Escaner de Virus",
+        "passwordGenerator": "Generador de Contraseñas",
+        "fileConverter": "Convertidor de archivos",
+        "haveIBeenPwned": "Internxt Monitor",
+        "metadataRemover": "Eliminador de Metadatos",
+        "aiDetector": "Detector de IA",
+        "fileCompressor": "Compresor de Archivos"
+      },
+      "features": {
+        "title": "Funciones",
+        "privateCloud": "Solución nube privada",
+        "cloudBakcup": "Solución cloud backup",
+        "GDPRCloud": "Almacenamiento RGPD",
+        "cloudPhotos": "Fotos en la nube",
+        "cloudVideo": "Videos en la nube"
+      }
+    },
+    "financialProject": "Proyecto financiado por el CDTI y financiado por los fondos FEDER de la UE. Internxt Mail e Internxt Meet: Servicio de correo seguro Internxt Mail y servicio de videollamadas seguras Internxt Meet, mediante el uso de encriptación post-cuántica e inteligencia artificial."
+  }
+}

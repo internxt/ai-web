@@ -1,0 +1,124 @@
+{
+  "BuildToKeepPrivateSection": {
+    "title_mobile": "Internxt AI creada\n para mantener tus\n conversaciones **privadas**",
+    "title_desktop": "Internxt AI  creada para mantener tus\n conversaciones **privadas**",
+    "titles": ["IA diseñada para tu privacidad", "Construido con la misión de Internxt en mente"],
+    "descriptions": [
+      "La Inteligencia Artificial debería hacer tu vida más fácil, más productiva y privada. Para ello, tienes Internxt AI. Lo hemos diseñado para que disfrutes de todos los beneficios de la IA sin comprometer la privacidad o seguridad de tus datos.",
+      "Gemini, ChatGPT y otros modelos de lenguaje cosechan tus datos para su beneficio. Diseñamos la IA de Internxt para tu beneficio. Junto con Internxt Drive, Meet, Mail y VPN, Internxt AI ayuda a avanzar nuestra misión de crear una Internet ética y más privada que te beneficie."
+    ]
+  },
+  "AccordionSection": {
+    "titles": ["Control total", "Protegido", "Nunca para aprendizaje automático"],
+    "descriptions": [
+      "Los asistentes de IA de las Grandes Tecnológicas recopilan tus datos, utilizan tus chats para el entrenamiento de la IA y permiten que humanos lean y revisen tus conversaciones. Con Internxt AI, ninguno de tus chats puede ser visto, compartido o utilizado para entrenar la IA. Ninguno de tus datos o conversaciones puede ser visto, compartido o utilizado para rastrear tu actividad en línea.",
+      "Nadie, incluido Internxt, puede acceder a tu historial de chat. Esto es posible gracias al cifrado de conocimiento cero que aplicamos en todos nuestros servicios. Nadie excepto tú tiene acceso a tus archivos, incluido Internxt. Todos tus chats permanecen privados y completamente bajo tu control.",
+      "Las plataformas de IA de las Grandes Tecnológicas mejoran sus sistemas utilizando tus interacciones para el entrenamiento y el análisis de comportamiento. Internxt AI nunca utiliza tus mensajes para enseñar o refinar modelos. Nos centramos en proporcionar asistencia precisa y fiable sin comprometer tu privacidad ni utilizar tu información como material de entrenamiento."
+    ]
+  },
+  "HorizontalScrollableSection": {
+    "title": "¿Cómo mantiene Internxt AI tus conversaciones privadas?",
+    "scrollableSection": {
+      "titles": [
+        "Solo tú ves tus chats",
+        "Solo tú tienes acceso",
+        "Tecnología que puedes verificar",
+        "Construido en Europa"
+      ],
+      "descriptions": [
+        "Con otros asistentes de IA, revisores humanos leen algunas discusiones grabadas para mejorar su IA. Con Internxt, ninguno de tus chats o registros se guarda en nuestros servidores y no pueden ser vistos, compartidos o utilizados para rastrearte o perfilarte.",
+        "Chatea con total confianza sabiendo que todos los chats y conversaciones están protegidos y bloqueados directamente en tu dispositivo con cifrado de conocimiento cero. Ni siquiera Internxt puede leer tus chats.",
+        "Como todo en Internxt, nuestro modelo de IA es completamente de código abierto. Cualquiera puede verificar que nuestra plataforma es segura y privada para respaldar que nunca utilizamos tus datos para entrenar LLMs.",
+        "Internxt tiene su sede en Valencia, España, y por lo tanto estamos sujetos al RGPD (GDPR), lo que te da control para eliminar tus datos en cualquier momento. Nada se comparte con terceros, gobiernos o cualquier otra persona."
+      ]
+    }
+  },
+  "ComparisonSection": {
+    "title": "IA privada diseñada para chats confidenciales",
+    "descriptions": "Internxt AI te ofrece todos los beneficios de los chatbots de IA, sin comprometer la privacidad de tus datos o tus conversaciones.",
+    "table": {
+      "competitors": ["Internxt AI", "Open AI", "Gemini", "Copilot", "Deepseek"],
+      "rows": [
+        {
+          "feature": "Nunca utiliza tus datos para entrenar la IA",
+          "Internxt AI": "Sí",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "Modelo de acceso cero",
+          "Internxt AI": "Sí",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "No registra tus chats",
+          "Internxt AI": "Sí",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "Gratuito y de código abierto",
+          "Internxt AI": "Sí",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "No se requiere correo electrónico ni suscripción",
+          "Internxt AI": "Sí",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        }
+      ]
+    }
+  },
+  "FaqSection": {
+    "title": "Preguntas? Tenemos respuestas",
+    "faq": [
+      {
+        "question": "¿Cuál es el mejor asistente de chat de IA privado?",
+        "answer": [
+          "Internxt es el mejor chat de IA seguro para proteger tu privacidad en línea, gracias al cifrado de conocimiento cero, para mantener tus conversaciones seguras y accesibles solo para ti. Todos tus datos están bloqueados y gestionados en tu dispositivo, por lo que nadie, incluido Internxt, puede acceder a tus chats."
+        ]
+      },
+      {
+        "question": "¿Puedo usar este chat de IA sin una cuenta Internxt?",
+        "answer": [
+          "Sí, nuestro asistente de IA privado está disponible de forma gratuita y puedes usarlo sin iniciar sesión o crear una cuenta Internxt, lo que permite un acceso rápido y fácil siempre que lo necesites."
+        ]
+      },
+      {
+        "question": "¿Cómo se compara Internxt con ChatGPT, Gemini o Copilot?",
+        "answer": [
+          "Internxt AI es una alternativa a los asistentes de IA de las grandes tecnológicas diseñada para proteger la seguridad de tus datos. Ninguno de tus chats se almacena o se utiliza para entrenar modelos de lenguaje. A diferencia de otros asistentes de IA, ninguno de tus chats o datos se comparte con terceros."
+        ]
+      },
+      {
+        "question": "¿Es Internxt AI un asistente de chat seguro?",
+        "answer": [
+          "Sí, cifrado de acceso cero y la estricta política de no-logs de Proton. Tus datos permanecen en tu dispositivo, y tus conversaciones no se utilizan para entrenarme, por lo que tus chats permanecen totalmente privados y solo para tus ojos."
+        ]
+      },
+      {
+        "question": "¿Aprende la IA de mis conversaciones?",
+        "answer": [
+          "No. Todo lo que compartes con nuestro asistente de IA seguro permanece completamente privado. Tus conversaciones nunca se almacenan, rastrean o utilizan para entrenar el sistema, y no se comparten con terceros. Tienes control total sobre tus datos, por lo que puedes chatear libremente sabiendo que tu información permanece segura."
+        ]
+      },
+      {
+        "question": "¿Qué idiomas entiende Internxt AI?",
+        "answer": ["Consultar cuándo esté en desarrollo."]
+      }
+    ]
+  }
+}

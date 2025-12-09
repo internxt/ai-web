@@ -1,0 +1,24 @@
+{
+  "links": {
+    "products": "產品",
+    "about": "關於我們",
+    "ourValues": "我們的價值觀",
+    "privacy": "隱私權",
+    "pricing": "定價",
+    "login": "登入",
+    "getStarted": "獲取 Internxt",
+    "business": "商業"
+  },
+  "products": {
+    "drive": "Internxt Drive",
+    "antivirus": "Internxt Antivirus",
+    "vpn": "Internxt VPN",
+    "cleaner": "Internxt Cleaner",
+    "meet": "Internxt Meet"
+  },
+  "ourValues": {
+    "privacy": "隱私權",
+    "openSource": "開源",
+    "sustainability": "永續性"
+  }
+}

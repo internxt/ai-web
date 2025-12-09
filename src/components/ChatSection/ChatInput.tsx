@@ -1,0 +1,52 @@
+import { PaperPlaneRight } from 'phosphor-react';
+import { useCallback, type KeyboardEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useChatContext } from './hooks/useChatContext';
+
+const ChatInput: React.FC = () => {
+  const { t } = useTranslation('chat-bot');
+  const { inputValue, setInputValue, handleSend, setIsChatActive, loading } = useChatContext();
+
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === 'Enter' && !e.shiftKey && inputValue.trim() && !loading) {
+        e.preventDefault();
+        handleSend();
+      }
+    },
+    [inputValue, loading, handleSend],
+  );
+
+  return (
+    <div className="flex flex-col gap-2 items-center px-10 lg:px-20 pb-8">
+      <div className="flex flex-row w-full lg:w-3/4 border border-gray-25 bg-white rounded-lg items-center py-2 px-4 transition-shadow duration-300">
+        <textarea
+          className="min-h-[40px] max-h-[200px] text-base w-full resize-none py-2 outline-none focus:outline-none overflow-y-auto scrollbar-hide"
+          placeholder={loading ? t('Loading') : t('SearchBar')}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyPress={handleKeyPress}
+          onFocus={() => setIsChatActive(true)}
+          disabled={loading}
+          rows={1}
+        />
+        <div
+          className={`flex border-l border-l-gray-25 flex-shrink-0 ${
+            loading || !inputValue.trim() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+          }`}
+          onClick={handleSend}
+        >
+          <PaperPlaneRight height={30} width={30} className="ml-3 text-neutral-90" />
+        </div>
+      </div>
+      <span className="flex gap-2 text-supporting-2 flex-col text-center mt-2 text-gray-35">
+        <p>
+          {t('Terms.text')} <span className="text-blue-500 cursor-pointer hover:underline">{t('Terms.blueText')}</span>
+        </p>
+        <p>{t('Info')}</p>
+      </span>
+    </div>
+  );
+};
+
+export default ChatInput;

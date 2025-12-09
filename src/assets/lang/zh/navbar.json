@@ -1,0 +1,24 @@
+{
+  "links": {
+    "products": "产品",
+    "about": "关于我们",
+    "ourValues": "我们的价值观",
+    "privacy": "隐私",
+    "pricing": "定价",
+    "login": "登录",
+    "getStarted": "获取 Internxt",
+    "business": "商业"
+  },
+  "products": {
+    "drive": "Internxt Drive",
+    "antivirus": "Internxt Antivirus",
+    "vpn": "Internxt VPN",
+    "cleaner": "Internxt Cleaner",
+    "meet": "Internxt Meet"
+  },
+  "ourValues": {
+    "privacy": "隐私",
+    "openSource": "开源",
+    "sustainability": "可持续性"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "HelloText": "Hallo!\nWas möchtest du heute fragen?",
+  "SearchBar": "Frag mich alles",
+  "Terms": {
+    "text": "Durch die Nutzung von Internxt AI akzeptierst du unsere",
+    "blueText": "Nutzungsbedingungen"
+  },
+  "Info": "Deine Daten bleiben privat. Alle Chats werden lokal auf deinem Gerät gespeichert.",
+  "Cta": "Privat chatten",
+  "Newchat": "Neuer Chat",
+  "Chats": "Chats",
+  "InfoCard": "Deine Daten werden lokal gespeichert. Das Löschen des Browser-Cache löscht den Chatverlauf.",
+  "Tools": {
+    "Rename": "Umbenennen",
+    "Delete": "Löschen"
+  },
+  "DailyLimit": "Tageslimit erreicht. Komm morgen wieder!"
+}

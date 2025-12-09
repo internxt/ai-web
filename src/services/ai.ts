@@ -1,0 +1,68 @@
+const AI_API_URL = import.meta.env.VITE_AI_API_URL as string | undefined;
+const API_ENDPOINT = AI_API_URL || 'http://localhost:8787';
+
+interface Message {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+}
+
+interface ChatResponse {
+  id: string;
+  object: string;
+  created: number;
+  model: string;
+  choices: Array<{
+    index: number;
+    message: {
+      role: string;
+      content: string;
+    };
+    finish_reason: string;
+  }>;
+  usage?: {
+    prompt_tokens: number;
+    completion_tokens: number;
+    total_tokens: number;
+  };
+}
+
+interface ChatError {
+  error: string;
+  message?: string;
+  retryAfter?: number;
+}
+
+export const aiService = {
+  async chat(
+    messages: Message[],
+    options?: {
+      max_tokens?: number;
+      temperature?: number;
+    },
+  ): Promise<string> {
+    try {
+      const response = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages,
+          max_tokens: options?.max_tokens || 1000,
+          temperature: options?.temperature || 0.7,
+        }),
+      });
+
+      if (!response.ok) {
+        const error: ChatError = await response.json();
+        throw new Error(error.message || error.error || 'AI request failed');
+      }
+
+      const data: ChatResponse = await response.json();
+      return data.choices[0].message.content;
+    } catch (error) {
+      console.error('AI Service Error:', error);
+      throw error;
+    }
+  },
+};

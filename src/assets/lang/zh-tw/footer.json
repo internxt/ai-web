@@ -1,0 +1,94 @@
+{
+  "DownloadApp": {
+    "title": "下載 Internxt",
+    "description": "使用適用於 iOS 或 Android 的 Internxt 行動應用程式，在安全的雲端儲存空間中管理您的檔案。"
+  },
+  "NewsletterSection": {
+    "title": "電子報 (Newsletter)",
+    "description": "想在我們推出新產品時收到消息嗎？請輸入您的電子郵件，剩下的交給我們！",
+    "input": "您的電子郵件",
+    "cta": "訂閱",
+    "privacy": "訂閱即表示您同意我們的",
+    "privacyLink": "隱私權政策。"
+  },
+  "FooterSection": {
+    "comingSoon": "即將推出",
+    "new": "新品",
+    "copyright": { "line1": "版權所有 © ", "line2": ", Internxt Universal Technologies SL" },
+    "sections": {
+      "products": {
+        "title": "產品",
+        "drive": "Internxt Drive (雲端硬碟)",
+        "objStorage": "Internxt S3 (物件儲存)",
+        "antivirus": "Internxt Antivirus (防毒軟體)",
+        "send": "Internxt Send (傳送)",
+        "vpn": "Internxt VPN (虛擬私人網路)",
+        "cleaner": "Internxt Cleaner (清理工具)",
+        "meet": "Internxt Meet (會議)",
+        "business": "Internxt 商業版",
+        "family": "Internxt 家庭版",
+        "pricing": "價格"
+      },
+      "company": {
+        "title": "公司",
+        "about": "關於我們",
+        "privacy": "隱私權",
+        "security": "安全性",
+        "openSource": "開源",
+        "legal": "法律資訊",
+        "sustainability": "永續發展"
+      },
+      "join": {
+        "title": "加入我們",
+        "signup": "建立帳戶",
+        "login": "登入",
+        "support": "支援",
+        "whitePaper": "白皮書",
+        "github": "GitHub",
+        "affiliates": "聯盟計畫 (Affiliates)"
+      },
+      "resources": {
+        "title": "資源",
+        "blog": "部落格",
+        "comparison": "雲端儲存比較",
+        "pCloudAlternative": "pCloud 替代方案",
+        "dropboxAlternative": "Dropbox 替代方案",
+        "megaAlternative": "Mega 替代方案",
+        "koofrAlternative": "Koofr 替代方案",
+        "icedriveAlternative": "Icedrive 替代方案",
+        "onedriveAlternative": "OneDrive 替代方案",
+        "googleDriveAlternative": "Google Drive 替代方案",
+        "drimeAlternative": "Drime 替代方案",
+        "degooAlternative": "Degoo 替代方案",
+        "fileJumpAlternative": "FileJump 替代方案",
+        "elephantDriveAlternative": "ElephantDrive 替代方案",
+        "whatGoogleKnowsAboutMe": "Google 對您的了解",
+        "WebDAV": "CLI 與 WebDAV",
+        "nas": "NAS (網路儲存裝置)",
+        "coupons": "優惠券",
+        "reviews": "評價"
+      },
+      "tools": {
+        "title": "免費工具",
+        "byteConverter": "位元組轉換器",
+        "temporaryEmail": "臨時信箱",
+        "passwordChecker": "密碼檢查器",
+        "fileVirusScan": "檔案病毒掃描器",
+        "passwordGenerator": "密碼產生器",
+        "fileConverter": "檔案轉換器",
+        "haveIBeenPwned": "Internxt 監控",
+        "metadataRemover": "中繼資料移除工具",
+        "aiDetector": "AI 偵測器",
+        "fileCompressor": "檔案壓縮器"
+      },
+      "features": {
+        "title": "功能",
+        "privateCloud": "私有雲端儲存解決方案",
+        "cloudBakcup": "雲端備份解決方案",
+        "GDPRCloud": "GDPR 雲端儲存",
+        "cloudPhotos": "雲端相片儲存",
+        "cloudVideo": "雲端影片儲存"
+      }
+    }
+  }
+}

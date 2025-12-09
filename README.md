@@ -1,45 +1,64 @@
-# GitHub Repository Template
+# AI Web
 
-This repository is the template to use for any new project and a reference for the already existing ones. This template comes with: 
-- Actions Workflows for automating the build, test, deployment and maintenance steps of the project.
-- Guidelines for the collaboration between contributors 
+A modern React web application built with TypeScript and Vite, deployed on Cloudflare Pages.  
+This document describes how to set up and run the development environment.
 
-## Initial setup
-Delete this section after doing the setup. 
-- Setup Sonar (including the badges set below)
-- Setup all the GitHub Actions
-- Modify or leave-as-is the [pull request template](.github/pull_request_template.md)
-- Adapt the .gitignore file
-- Fill the "Get Started" section below
-- Prepare the project for the contributors:
-  - Set a [rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) to block the desired branches, by default you can block main/master and require a review and a pull request, preventing push forces, pushing directly to master and so on.
-  - Set the auto-delete branch [feature](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches), so stalled, old, legacy branches are removed after merging the PR, keeping the repository clean
+# Getting Started
 
+## Installation
 
-[![node](https://img.shields.io/badge/node-20-iron)](https://nodejs.org/download/release/latest-iron/)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=coverage)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=internxt_project-name&metric=bugs)](https://sonarcloud.io/summary/new_code?id=internxt_project-name)
-## Get Started
+- Create a `.env` file by copying the `.env.template` provided in the repo (if applicable).
+- Use `yarn` to install project dependencies.
 
-### Quick setup
-Explain any tools required to work with this project (yarn, ubuntu libraries, etc)
+## Scripts
 
-### How to install
-Explain the instructions to follow in order to install the dependencies
+### `yarn dev`
 
-### Starting the app
-Explain how to start the app, either locally, in docker, etc
+Runs the app in the development mode.  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Testing the app
-Explain how to run the tests
+The page will reload if you make edits.  
+You will also see any lint errors in the console.
 
-### License 
-This project is based on GNU License. You can show it in the [License](./LICENSE) file.
+### `yarn preview`
+
+Serves the built application locally to preview the production output.  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+- Useful for testing the result of a production build.
+- No hot reloading or development tools included.
+
+> The preview command serves the latest build output, so if you haven't run build beforehand, it will either fail or serve outdated files.
+
+### `yarn lint`
+
+- Runs eslint linter
+
+### `yarn test`
+
+- Runs unit tests with [Vitest](https://vitest.dev/)
+
+### `yarn build`
+
+Builds the app for production to the `dist` folder.  
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.  
+Your app is ready to be deployed!
+
+### `yarn deploy`
+
+Deploys the application to Cloudflare Pages.
+
+Make sure you have configured your Cloudflare account with Wrangler CLI before deploying.
+
+## Recommended VSCode Extensions
+
+To speed up the development and maintenance of the project, it is recommended to use the following extensions for the IDE:
+
+- Better Comments
+- ESLint
+- PostCSS Language Support
+- Tailwind CSS IntelliSense
+- GitLens
+- Prettier

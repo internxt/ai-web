@@ -1,0 +1,119 @@
+{
+  "BuildToKeepPrivateSection": {
+    "title_mobile": "Internxt AI is built\n to keep your\nconversations **private**",
+    "title_desktop": "Internxt AI is built to keep your\n conversations **private**",
+    "titles": ["AI built for your privacy", "Built with Internxt’s mission in mind"],
+    "descriptions": [
+      "Artificial Intelligence should make your life easier, more productive, and private. For this, you have Internxt AI. We built this for you to enjoy all the benefits of AI without compromising the privacy or security of your data.",
+      "Gemini, ChatGPT, and other language models harvest your data to benefit them. We built Internxt’s AI to benefit you. Alongside Internxt Drive, Meet, Mail, and VPN, Internxt AI helps advance our mission to create an ethical and more private internet that benefits you."
+    ]
+  },
+  "AccordionSection": {
+    "titles": ["Full control", "Protected", "Never for machine learning"],
+    "descriptions": [
+      "Big Tech AI Assistants harvest your data, use your chats for AI training, and allow humans to read and review your conversations. With Internxt AI, none of your chats can be seen, shared, or used to train AI. None of your data or conversations can be seen, shared, or used to track your online activity.",
+      "Nobody, including Internxt, can access your chat history. We make this possible thanks to the zero-knowledge encryption we apply across all our services. Nobody except you has access to your files — including Internxt. All your chats remain private and completely under your control.",
+      "Big Tech AI platforms improve their systems by using your interactions for training and behavioral analysis. Internxt AI never uses your messages to teach or refine models. We focus on delivering accurate, reliable assistance without compromising your privacy or using your information as training material."
+    ]
+  },
+  "HorizontalScrollableSection": {
+    "title": "How does Internxt AI keep your conversations private?",
+    "scrollableSection": {
+      "titles": ["Only you see your chats", "Only you have access", "Tech you can verify", "Built in Europe"],
+      "descriptions": [
+        "With other AI assistants, human reviewers read some recorded discussions to improve their AI. With Internxt, none of your chats or logs are saved on our servers and can’t be seen, shared, or used to track or profile you.",
+        "Chat in total confidence knowing all chats and conversations are protected and locked directly on your device with zero-knowledge encryption. Not even Internxt can read your chats.",
+        "Like everything at Internxt, our AI model is completely open source. Anyone can verify our platform as secure and private to back up that we never use your data to train LLMs.",
+        "Internxt is based in Valencia, Spain, and we are therefore subject to GDPR, giving you control to delete your data at any time. Nothing is shared with third parties, governments, or anyone else."
+      ]
+    }
+  },
+  "ComparisonSection": {
+    "title": "Private AI built for confidential chats",
+    "descriptions": "Internxt AI gives you all the benefits of AI chatbots, without compromising the privacy of your data or your conversations.",
+    "table": {
+      "competitors": ["Internxt AI", "Open AI", "Gemini", "Copilot", "Deepseek"],
+      "rows": [
+        {
+          "feature": "Never uses your data to train AI",
+          "Internxt AI": "Yes",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "Zero-access model",
+          "Internxt AI": "Yes",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "Does not log your chats",
+          "Internxt AI": "Yes",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "Free and Open source",
+          "Internxt AI": "Yes",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        },
+        {
+          "feature": "No email or subscription required",
+          "Internxt AI": "Yes",
+          "OpenAI": "No",
+          "Gemini": "No",
+          "Copilot": "No",
+          "Deepseek": "No"
+        }
+      ]
+    }
+  },
+  "FaqSection": {
+    "title": "Questions? We have answers",
+    "faq": [
+      {
+        "question": "What is the best private AI chat assistant?",
+        "answer": [
+          "Internxt is the best secure AI chat to protect your privacy online, thanks to zero-knowledge encryption, to keep your conversations secure, and accessible only to you. All your data is locked and managed on your device, so nobody, including Internxt, can access your chats."
+        ]
+      },
+      {
+        "question": "Can I use this AI chat without an Internxt account?",
+        "answer": [
+          "Yes, our private AI assistant is available for free, and you can use it without logging in or creating an Internxt account, allowing for quick, easy access whenever you need it."
+        ]
+      },
+      {
+        "question": "How does Internxt compare to ChatGPT, Gemini, or Copilot?",
+        "answer": [
+          "Internxt AI is an alternative to Big Tech AI assistants designed to protect your data security. None of your chats are stored or used to train language models. Unlike other AI assistants, none of your chats or data is shared with third parties."
+        ]
+      },
+      {
+        "question": "Is Internxt AI a secure chat assistant?",
+        "answer": [
+          "Yes, zero-access encryption and Proton's strict no-logs policy. Your data remains on your device, and your conversations aren’t used to train me, so your chats stay totally private and for your eyes only."
+        ]
+      },
+      {
+        "question": "Does the AI learn from my conversations?",
+        "answer": [
+          "No. Everything you share with our secure AI assistant stays completely private. Your conversations are never stored, tracked, or used to train the system, and they are not shared with any third parties. You have full control over your data, so you can chat freely knowing your information remains secure."
+        ]
+      },
+      {
+        "question": "What languages does Internxt AI understand?",
+        "answer": ["Check when in development"]
+      }
+    ]
+  }
+}

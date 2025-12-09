@@ -1,0 +1,94 @@
+{
+  "DownloadApp": {
+    "title": "Télécharger Internxt",
+    "description": "Gérez vos fichiers dans un espace de stockage cloud sécurisé grâce à l'application mobile pour iOS ou Android."
+  },
+  "NewsletterSection": {
+    "title": "Newsletter",
+    "description": "Souhaitez-vous être informé(e) lorsque nous lançons de nouveaux produits ? Entrez votre e-mail et nous nous en occuperons.",
+    "input": "Votre e-mail",
+    "cta": "S'abonner",
+    "privacy": "En vous abonnant, vous acceptez notre",
+    "privacyLink": "politique de confidentialité."
+  },
+  "FooterSection": {
+    "comingSoon": "Bientôt disponible",
+    "new": "Nouveau",
+    "copyright": { "line1": "Copyright © ", "line2": ", Internxt Universal Technologies SL" },
+    "sections": {
+      "products": {
+        "title": "Produits",
+        "drive": "Internxt Drive",
+        "objStorage": "Internxt S3",
+        "antivirus": "Internxt Antivirus",
+        "send": "Internxt Send",
+        "vpn": "Internxt VPN",
+        "cleaner": "Internxt Cleaner",
+        "meet": "Internxt Meet",
+        "business": "Internxt pour les Entreprises",
+        "family": "Internxt pour les Familles",
+        "pricing": "Tarifs"
+      },
+      "company": {
+        "title": "Entreprise",
+        "about": "À Propos",
+        "privacy": "Confidentialité",
+        "security": "Sécurité",
+        "openSource": "Open Source",
+        "legal": "Légal",
+        "sustainability": "Durabilité"
+      },
+      "join": {
+        "title": "Rejoignez-nous",
+        "signup": "Créer un compte",
+        "login": "Se connecter",
+        "support": "Support",
+        "whitePaper": "Livre Blanc (White Paper)",
+        "github": "GitHub",
+        "affiliates": "Affiliés"
+      },
+      "resources": {
+        "title": "Ressources",
+        "blog": "Blog",
+        "comparison": "Comparaison de services Cloud",
+        "pCloudAlternative": "Alternative à pCloud",
+        "dropboxAlternative": "Alternative à Dropbox",
+        "megaAlternative": "Alternative à Mega",
+        "koofrAlternative": "Alternative à Koofr",
+        "icedriveAlternative": "Alternative à Icedrive",
+        "onedriveAlternative": "Alternative à OneDrive",
+        "googleDriveAlternative": "Alternative à Google Drive",
+        "drimeAlternative": "Alternative à Drime",
+        "degooAlternative": "Alternative à Degoo",
+        "fileJumpAlternative": "Alternative à FileJump",
+        "elephantDriveAlternative": "Alternative à ElephantDrive",
+        "whatGoogleKnowsAboutMe": "Ce que Google sait de vous",
+        "WebDAV": "CLI & WebDAV",
+        "nas": "NAS",
+        "coupons": "Coupons",
+        "reviews": "Avis"
+      },
+      "tools": {
+        "title": "Outils gratuits",
+        "byteConverter": "Convertisseur d'unités",
+        "temporaryEmail": "E-mail temporaire",
+        "passwordChecker": "Vérificateur de mots de passe",
+        "fileVirusScan": "Scanner de virus de fichiers",
+        "passwordGenerator": "Générateur de mots de passe",
+        "fileConverter": "Convertisseur de fichiers",
+        "haveIBeenPwned": "Internxt Monitor",
+        "metadataRemover": "Suppresseur de métadonnées",
+        "aiDetector": "Détecteur d'IA",
+        "fileCompressor": "Compresseur de fichiers"
+      },
+      "features": {
+        "title": "Fonctionnalités",
+        "privateCloud": "Solution cloud privé",
+        "cloudBakcup": "Solution de sauvegarde cloud",
+        "GDPRCloud": "Stockage conforme au RGPD",
+        "cloudPhotos": "Photos dans le cloud",
+        "cloudVideo": "Vidéos dans le cloud"
+      }
+    }
+  }
+}
