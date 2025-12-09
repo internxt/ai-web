@@ -14,5 +14,11 @@
     "Rename": "重命名",
     "Delete": "删除"
   },
-  "DailyLimit": "已达每日限额。请明天再来！"
+  "DailyLimit": "已达每日限额。请明天再来！",
+  "DeleteConfirm": {
+      "Title": "删除聊天？",
+      "Message": "此操作将删除该聊天。无法撤销。",
+      "Cancel": "取消",
+      "Confirm": "删除"
+    }
 }

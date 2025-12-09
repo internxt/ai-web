@@ -14,5 +14,11 @@
     "Rename": "Renombrar",
     "Delete": "Eliminar"
   },
-  "DailyLimit": "Límite diario alcanzado. ¡Vuelve mañana!"
+  "DailyLimit": "Límite diario alcanzado. ¡Vuelve mañana!",
+  "DeleteConfirm": {
+      "Title": "¿Eliminar el chat?",
+      "Message": "Esta acción eliminará el chat. No se puede deshacer.",
+      "Cancel": "Cancelar",
+      "Confirm": "Eliminar"
+    }
 }

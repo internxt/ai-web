@@ -14,5 +14,11 @@
     "Rename": "Rename",
     "Delete": "Delete"
   },
-  "DailyLimit": "Daily limit reached. Come back tomorrow!"
+  "DailyLimit": "Daily limit reached. Come back tomorrow!",
+  "DeleteConfirm": {
+    "Title": "Delete chat?",
+    "Message": "This action will delete the chat. It can't be undone.",
+    "Cancel": "Cancel",
+    "Confirm": "Delete"
+  }
 }

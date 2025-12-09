@@ -50,7 +50,7 @@ export const aiService = {
         },
         body: JSON.stringify({
           messages,
-          max_tokens: options?.max_tokens || 1000,
+          max_tokens: options?.max_tokens || 4000,
           temperature: options?.temperature || 0.7,
         }),
       });

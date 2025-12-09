@@ -27,7 +27,7 @@ const ChatSection: React.FC = () => {
         <div
           className={`flex flex-col w-full h-full ${
             !hasStartedChat ? 'justify-center gap-8' : 'justify-between'
-          } ${isSidebarOpen ? 'lg:ml-14' : ''}`}
+          } ${isSidebarOpen ? 'ml-64' : 'ml-14'}`}
           style={{
             transition: 'margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
@@ -36,7 +36,15 @@ const ChatSection: React.FC = () => {
           <ChatInput />
         </div>
       </div>
-      <div className="flex flex-row border border-primary text-primary rounded-md py-4 px-6 gap-2 items-center">
+      <div 
+        className="flex flex-row border border-primary text-primary rounded-md py-4 px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
+        onClick={() => {
+          const element = document.getElementById('chatInPrivate');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+      >
         <p className="flex text-primary text-base font-medium">{t('Cta')}</p>
         <ArrowDown height={24} width={24} />
       </div>

@@ -14,5 +14,11 @@
     "Rename": "Renommer",
     "Delete": "Supprimer"
   },
-  "DailyLimit": "Limite quotidienne atteinte. Revenez demain !"
+  "DailyLimit": "Limite quotidienne atteinte. Revenez demain !",
+  "DeleteConfirm": {
+      "Title": "Supprimer la discussion ?",
+      "Message": "Cette action supprimera la discussion. Elle est irréversible.",
+      "Cancel": "Annuler",
+      "Confirm": "Supprimer"
+    }
 }

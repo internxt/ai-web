@@ -9,9 +9,9 @@ const ChatList: React.FC = () => {
   return (
     <>
       <div className="h-[1px] bg-green-120 w-full flex-shrink-0 mt-2"></div>
-      <div className="flex-1 overflow-y-auto scrollbar-hide px-2">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide px-2">
         <p className="text-base font-medium text-gray-35 py-2">Chats</p>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-0.5">
           {chats.map((chat, index) => (
             <ChatItem key={chat.id} chat={chat} index={index} />
           ))}

@@ -41,7 +41,12 @@ const ChatInput: React.FC = () => {
       </div>
       <span className="flex gap-2 text-supporting-2 flex-col text-center mt-2 text-gray-35">
         <p>
-          {t('Terms.text')} <span className="text-blue-500 cursor-pointer hover:underline">{t('Terms.blueText')}</span>
+          {t('Terms.text')} <a 
+            href="https://internxt.com/legal" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline transition-colors"
+          >{t('Terms.blueText')}</a>
         </p>
         <p>{t('Info')}</p>
       </span>
