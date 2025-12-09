@@ -1,4 +1,4 @@
-const AI_API_URL = import.meta.env.AI_SERVER_URL as string | undefined;
+const AI_API_URL = import.meta.env.AI_SERVER_URL as string;
 
 interface Message {
   role: 'system' | 'user' | 'assistant';
@@ -40,7 +40,7 @@ export const aiService = {
     },
   ): Promise<string> {
     try {
-      const response = await fetch(`${AI_API_URL}`, { 
+      const response = await fetch(AI_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
