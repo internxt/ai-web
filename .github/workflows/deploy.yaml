@@ -1,4 +1,4 @@
-name: Drive Web Cloudflare CD
+name: AI Web CD
 on:
   push:
     branches: ['master']
