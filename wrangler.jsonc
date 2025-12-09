@@ -4,7 +4,7 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "internxt-ai",
+  "name": "ai-web",
   "compatibility_date": "2025-11-11",
   "pages_build_output_dir": "./dist",
   "observability": {
