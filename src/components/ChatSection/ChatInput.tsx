@@ -18,20 +18,25 @@ const ChatInput: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col gap-2 items-center px-10 lg:px-20 pb-8">
-      <div className="flex flex-row w-full lg:w-3/4 border border-gray-25 bg-white rounded-lg items-center py-2 px-4 transition-shadow duration-300">
+    <div className="flex flex-col gap-2 items-center px-10 lg:px-40 pb-8">
+      <div className="flex flex-row w-full lg:w-full bg-white border border-gray-25 rounded-lg items-center py-2 px-4 transition-shadow duration-300">
         <textarea
           className="min-h-[40px] max-h-[200px] text-base w-full resize-none py-2 outline-none focus:outline-none overflow-y-auto scrollbar-hide"
+          style={{ height: 'auto' }}
           placeholder={loading ? t('Loading') : t('SearchBar')}
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            e.target.style.height = 'auto';
+            e.target.style.height = `${Math.min(e.target.scrollHeight, 200)}px`;
+          }}
           onKeyPress={handleKeyPress}
           onFocus={() => setIsChatActive(true)}
           disabled={loading}
           rows={1}
         />
         <div
-          className={`flex border-l border-l-gray-25 flex-shrink-0 ${
+          className={`flex border-l border-l-gray-25 h-full flex-shrink-0 items-center ${
             loading || !inputValue.trim() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
           }`}
           onClick={handleSend}
@@ -41,7 +46,12 @@ const ChatInput: React.FC = () => {
       </div>
       <span className="flex gap-2 text-supporting-2 flex-col text-center mt-2 text-gray-35">
         <p>
-          {t('Terms.text')} <span className="text-blue-500 cursor-pointer hover:underline">{t('Terms.blueText')}</span>
+          {t('Terms.text')} <a 
+            href="https://internxt.com/legal" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline transition-colors"
+          >{t('Terms.blueText')}</a>
         </p>
         <p>{t('Info')}</p>
       </span>

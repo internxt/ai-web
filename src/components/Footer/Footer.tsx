@@ -259,6 +259,22 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
                       </span>
                     </a>
 
+                     <a
+                      href="https:/ai.internxt.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="items-center hover:text-primary"
+                    >
+                      {t('FooterSection.sections.products.ia')}
+                      <span
+                        className={`ml-2 h-max items-center justify-center rounded-2 ${
+                          darkMode ? 'bg-primary/10' : 'bg-primary'
+                        } bg-opacity-15 px-1 py-0.5 text-10 font-semibold text-primary`}
+                      >
+                        {t('FooterSection.new')}
+                      </span>
+                    </a>
+
                     <a
                       href="https://internxt.com/business"
                       target="_blank"
@@ -820,6 +836,9 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
                       </a>
                       <a href="https://internxt.com/meet" target="_blank" rel="noopener noreferrer">
                         {t('FooterSection.sections.products.meet')}
+                      </a>
+                      <a href="https://ai.internxt.com" target="_blank" rel="noopener noreferrer">
+                        {t('FooterSection.sections.products.ia')}
                       </a>
                       <a href="https://internxt.com/business" target="_blank" rel="noopener noreferrer">
                         {t('FooterSection.sections.products.business')}

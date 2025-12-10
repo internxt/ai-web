@@ -14,5 +14,11 @@
     "Rename": "Umbenennen",
     "Delete": "Löschen"
   },
-  "DailyLimit": "Tageslimit erreicht. Komm morgen wieder!"
+  "DailyLimit": "Tageslimit erreicht. Komm morgen wieder!",
+  "DeleteConfirm": {
+      "Title": "Chat löschen?",
+      "Message": "Diese Aktion wird den Chat löschen. Dies kann nicht rückgängig gemacht werden.",
+      "Cancel": "Abbrechen",
+      "Confirm": "Löschen"
+    }
 }

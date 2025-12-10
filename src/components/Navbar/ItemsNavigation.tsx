@@ -102,6 +102,7 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
             { href: 'https://internxt.com/vpn', text: t('products.vpn') },
             { href: 'https://internxt.com/cleaner', text: t('products.cleaner') },
             { href: 'https://internxt.com/meet', text: t('products.meet') },
+            { href: 'https://ai.internxt.com', text: t('products.ia') },
           ]}
           darkMode={darkMode}
         />

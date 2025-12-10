@@ -19,7 +19,7 @@ const ComparisonSection: React.FC = () => {
     }
 
     return (
-      <section className="flex flex-col items-center py-10 lg:py-20 px-5 lg:px-10 xl:px-32 3xl:px-80 bg-white">
+      <section id='chatInPrivate' className="flex flex-col items-center py-10 lg:py-20 px-5 lg:px-10 xl:px-32 3xl:px-80 bg-white">
         <div className="flex flex-col items-center gap-16 w-full">
           <Header />
           <div className="hidden lg:block w-full">
@@ -41,8 +41,8 @@ const Header: React.FC = () => {
   const { t } = useTranslation('page');
 
   return (
-    <div className="flex flex-col items-center text-center gap-6 lg:px-80">
-      <h2 className="text-3xl lg:text-4xl font-bold text-gray-100">{t('ComparisonSection.title')}</h2>
+    <div className="flex flex-col items-center text-center gap-6 lg:px-80 lea">
+      <h2 className="text-3xl lg:text-4xl font-bold text-gray-100 leading-tight">{t('ComparisonSection.title')}</h2>
       <p className="text-xl text-gray-55 leading-tight">{t('ComparisonSection.descriptions')}</p>
     </div>
   );
@@ -54,15 +54,15 @@ interface DesktopComparisonTableProps {
 }
 
 const DesktopComparisonTable: React.FC<DesktopComparisonTableProps> = ({ competitors, rows }) => {
-  const totalColumns = competitors.length + 1;
-  const columnWidth = `${100 / totalColumns}%`;
-
+  const competitorColumns = competitors.length;
+  
   return (
     <div className="w-full overflow-x-auto mt-8">
-      <table className="w-full border-collapse table-fixed">
+      <table className="w-full border-collapse">
         <colgroup>
-          {Array.from({ length: totalColumns }).map((_, index) => (
-            <col key={index} style={{ width: columnWidth }} />
+          <col style={{ width: '240px' }} />
+          {competitors.map((_, index) => (
+            <col key={index} style={{ width: `calc((100% - 280px) / ${competitorColumns})` }} />
           ))}
         </colgroup>
         <DesktopTableHeader competitors={competitors} />
@@ -215,6 +215,11 @@ const MobileComparisonTable: React.FC<MobileComparisonTableProps> = ({ competito
     return competitor === 'Open AI' ? 'OpenAI' : competitor;
   };
 
+  // Ancho fijo para la columna de features
+  const featureColumnWidth = 180; // Ajusta según necesites
+  // Ancho para cada columna de competidor
+  const competitorColumnWidth = 150; // Ajusta según necesites
+
   return (
     <div className="w-full overflow-hidden">
       <div className="flex">
@@ -224,13 +229,13 @@ const MobileComparisonTable: React.FC<MobileComparisonTableProps> = ({ competito
             boxShadow: isScrolled ? '4px 0px 6px -1px rgba(0, 0, 0, 0.1), 2px 0px 4px -2px rgba(0, 0, 0, 0.1)' : 'none',
           }}
         >
-          <div className="relative z-10 w-[140px] bg-white sm:w-[170px]">
+          <div className="relative z-10 bg-white" style={{ width: `${featureColumnWidth}px` }}>
             <div className="h-[48px]"></div>
 
             {rows.map((row, index) => (
               <div
                 key={`fixed-${index}`}
-                className={`flex h-[50px] flex-col items-start justify-center border border-neutral-25 px-2 sm:px-3 ${
+                className={`flex h-[50px] flex-col items-start justify-center border border-neutral-25 px-3 ${
                   index % 2 === 0 ? 'bg-neutral-10' : 'bg-white'
                 } ${index === 0 ? 'rounded-tl-2xl' : ''} ${index === rows.length - 1 ? 'rounded-bl-2xl' : ''}`}
               >
@@ -241,10 +246,10 @@ const MobileComparisonTable: React.FC<MobileComparisonTableProps> = ({ competito
         </div>
 
         <div ref={scrollRef} className="flex-1 overflow-x-auto">
-          <div style={{ width: `${competitors.length * 215}px` }}>
+          <div style={{ width: `${competitors.length * competitorColumnWidth}px` }}>
             <div className="flex">
               {competitors.map((competitor, compIndex) => (
-                <div key={`header-${compIndex}`} className="w-[215px]">
+                <div key={`header-${compIndex}`} style={{ width: `${competitorColumnWidth}px` }}>
                   <div
                     className={`flex h-[48px] flex-col items-center justify-center border border-neutral-25 p-3 ${
                       compIndex === 0 ? 'bg-neutral-17' : 'bg-white'
@@ -274,7 +279,7 @@ const MobileComparisonTable: React.FC<MobileComparisonTableProps> = ({ competito
                   }
 
                   return (
-                    <div key={`cell-${compIndex}`} className="w-[215px]">
+                    <div key={`cell-${compIndex}`} style={{ width: `${competitorColumnWidth}px` }}>
                       <div
                         className={`flex h-[50px] flex-col items-center justify-center border border-neutral-25 px-2 ${bgColor} ${
                           isLastRow && isLastCol ? 'rounded-br-2xl' : ''
