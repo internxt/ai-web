@@ -1,4 +1,4 @@
-import { PencilSimple, Trash } from 'phosphor-react';
+import { PencilSimple, Trash, X } from 'phosphor-react';
 import { useState, useCallback, type ChangeEvent, type KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
@@ -20,6 +20,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
     handleCancelRename,
     handleDeleteChat,
     setEditingChatName,
+    setIsSidebarOpen,
   } = useChatContext();
 
   const [isHovered, setIsHovered] = useState(false);
@@ -29,10 +30,11 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
   const isEditing = editingChatId === chat.id;
 
   const handleClick = useCallback(() => {
+    setIsSidebarOpen(!setIsSidebarOpen);
     if (!isEditing) {
       loadChat(chat.id);
     }
-  }, [isEditing, loadChat, chat.id]);
+  }, [isEditing, loadChat, chat.id, setIsSidebarOpen]);
 
   const handleRenameClick = useCallback(
     (e: React.MouseEvent) => {
@@ -95,7 +97,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
   return (
     <>
       <div
-        className="relative flex items-center justify-between p-2 rounded-lg cursor-pointer group"
+        className={`${isEditing?'bg-primary/10':''} relative flex items-center justify-between lg:hover:bg-primary/10 p-2 rounded-lg cursor-pointer group`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleClick}
@@ -108,7 +110,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
             onBlur={() => handleSaveRename(chat.id)}
             onKeyDown={handleKeyDown}
             onClick={(e) => e.stopPropagation()}
-            className="text-base font-medium text-gray-55 w-full bg-green-120 rounded outline-none px-2 py-1"
+            className="text-base font-medium text-primary bg-primary/1 w-full rounded outline-none pl-1 "
             autoFocus
           />
         ) : (
@@ -116,7 +118,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
         )}
 
         {(isHovered || isMenuOpen) && !isEditing && (
-          <div className="relative ml-2">
+          <div className="lg:flex hidden relative ml-2 ">
             <button onClick={handleMenuToggle}  aria-label="Chat options">
               <span className="text-gray-55 font-bold">⋯</span>
             </button>
@@ -154,27 +156,35 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
       </div>
 
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={cancelDelete}>
+         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={cancelDelete}>
           <div
-            className="bg-white rounded-lg p-6 max-w-sm mx-4 shadow-xl"
+            className="bg-white rounded-16 p-6 gap-5 flex flex-col max-w-sm mx-4 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-lg font-semibold text-gray-100 mb-2">{t('DeleteConfirm.Title') || 'Eliminar chat'}</h3>
-            <p className="text-sm text-gray-55 mb-6">
+            <div className="flex items-start justify-between ">
+              <h3 className="text-2xl font-medium text-gray-100">{t('DeleteConfirm.Title')}</h3>
+              <X
+                height={20}
+                width={20}
+                className="text-gray-100 cursor-pointer hover:opacity-70 transition-opacity"
+                onClick={cancelDelete}
+              />
+            </div>
+            <p className="text-base  text-gray-55">
               {t('DeleteConfirm.Message') || '¿Estás seguro de que quieres eliminar este chat? Esta acción no se puede deshacer.'}
             </p>
-            <div className="flex gap-3 justify-end">
+            <div className="flex gap-3 lg:justify-end">
               <button
                 onClick={cancelDelete}
-                className="px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-1 rounded-lg"
+                className="px-4 py-2  text-base font-medium text-primary border-2 border-primary hover:bg-gray-1 rounded-lg"
               >
-                {t('DeleteConfirm.Cancel') || 'Cancelar'}
+                {t('DeleteConfirm.Cancel') }
               </button>
               <button
                 onClick={confirmDelete}
-                className="px-4 py-2 text-sm font-medium text-white bg-red hover:bg-red-dark rounded-lg"
+                className="px-4 py-2  text-base font-medium text-white bg-red hover:bg-red-dark rounded-lg"
               >
-                {t('DeleteConfirm.Confirm') || 'Eliminar'}
+                {t('DeleteConfirm.Confirm') }
               </button>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { ArrowDown } from 'phosphor-react';
 import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 
