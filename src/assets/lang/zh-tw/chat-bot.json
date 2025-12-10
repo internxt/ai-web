@@ -16,9 +16,18 @@
   },
   "DailyLimit": "已達每日上限。請明天再來！",
   "DeleteConfirm": {
-      "Title": "刪除聊天？",
-      "Message": "此動作將刪除該聊天。無法復原。",
-      "Cancel": "取消",
-      "Confirm": "刪除"
-    }
+    "Title": "刪除聊天？",
+    "Message": "此動作將刪除該聊天。無法復原。",
+    "Cancel": "取消",
+    "Confirm": "刪除"
+  },
+  "RenameConfirm": {
+    "Title": "重新命名聊天",
+    "Cancel": "取消",
+    "Rename": "重新命名",
+    "Renaming": "重新命名中"
+  },
+  "Thinking": "思考中...",
+  "Search": "搜尋聊天",
+  "NoChatsFound": "未找到聊天"
 }

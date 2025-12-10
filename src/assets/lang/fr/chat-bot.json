@@ -16,9 +16,18 @@
   },
   "DailyLimit": "Limite quotidienne atteinte. Revenez demain !",
   "DeleteConfirm": {
-      "Title": "Supprimer la discussion ?",
-      "Message": "Cette action supprimera la discussion. Elle est irréversible.",
-      "Cancel": "Annuler",
-      "Confirm": "Supprimer"
-    }
+    "Title": "Supprimer la discussion ?",
+    "Message": "Cette action supprimera la discussion. Elle est irréversible.",
+    "Cancel": "Annuler",
+    "Confirm": "Supprimer"
+  },
+  "RenameConfirm": {
+    "Title": "Renommer le chat",
+    "Cancel": "Annuler",
+    "Rename": "Renommer",
+    "Renaming": "Renommage"
+  },
+  "Thinking": "Réflexion...",
+  "Search": "Rechercher des chats",
+  "NoChatsFound": "Aucun chat trouvé"
 }

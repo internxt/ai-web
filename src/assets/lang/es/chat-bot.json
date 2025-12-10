@@ -16,9 +16,18 @@
   },
   "DailyLimit": "Límite diario alcanzado. ¡Vuelve mañana!",
   "DeleteConfirm": {
-      "Title": "¿Eliminar el chat?",
-      "Message": "Esta acción eliminará el chat. No se puede deshacer.",
-      "Cancel": "Cancelar",
-      "Confirm": "Eliminar"
-    }
+    "Title": "¿Eliminar el chat?",
+    "Message": "Esta acción eliminará el chat. No se puede deshacer.",
+    "Cancel": "Cancelar",
+    "Confirm": "Eliminar"
+  },
+  "RenameConfirm": {
+    "Title": "Renombrar chat",
+    "Cancel": "Cancelar",
+    "Rename": "Renombrar",
+    "Renaming": "Renombrando"
+  },
+  "Thinking": "Pensando...",
+  "Search": "Buscar chats",
+  "NoChatsFound": "No se encontraron chats"
 }
