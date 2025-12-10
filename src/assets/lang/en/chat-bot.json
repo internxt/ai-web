@@ -20,5 +20,14 @@
     "Message": "This action will delete the chat. It can't be undone.",
     "Cancel": "Cancel",
     "Confirm": "Delete"
-  }
+  },
+  "RenameConfirm": {
+    "Title": "Rename chat",
+    "Cancel": "Cancel",
+    "Rename": "Rename",
+    "Renaming":"Renaming"
+  },
+  "Thinking":"Thinking...",
+  "Search" : "Search Chats",
+  "NoChatsFound":"No chats Found"
 }

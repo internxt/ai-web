@@ -2,13 +2,13 @@ import { ArrowDown } from 'phosphor-react';
 import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 
 const ChatSection: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { isChatActive, isSidebarOpen, hasStartedChat } = useChatContext();
+  const { isChatActive, isSidebarOpen, hasStartedChat, setIsSidebarOpen } = useChatContext();
   const chatSectionRef = useRef<HTMLDivElement>(null);
 
   const mainContainerClasses = useMemo(() => {
@@ -24,10 +24,18 @@ const ChatSection: React.FC = () => {
     >
       <div className={mainContainerClasses} ref={chatSectionRef}>
         <Sidebar />
+        
+        {isSidebarOpen && (
+          <div 
+            className="lg:hidden absolute inset-0 bg-black/20 z-5 animate-in fade-in duration-200"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
         <div
           className={`flex flex-col w-full h-full ${
-            !hasStartedChat ? 'justify-center gap-8' : 'justify-between'
-          } ${isSidebarOpen ? 'ml-64' : 'ml-14'}`}
+            !hasStartedChat ? 'justify-center gap-5 lg:gap-8' : 'justify-between pt-20 lg:pt-0'
+          } ${isSidebarOpen ? ' lg:ml-64' : 'lg:ml-14'}`}
           style={{
             transition: 'margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
@@ -36,6 +44,7 @@ const ChatSection: React.FC = () => {
           <ChatInput />
         </div>
       </div>
+
       <div 
         className="flex flex-row border border-primary text-primary rounded-md py-4 px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
         onClick={() => {

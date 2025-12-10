@@ -20,5 +20,14 @@
       "Message": "Diese Aktion wird den Chat löschen. Dies kann nicht rückgängig gemacht werden.",
       "Cancel": "Abbrechen",
       "Confirm": "Löschen"
-    }
+  },
+  "RenameConfirm": {
+    "Title": "Chat umbenennen",
+    "Cancel": "Abbrechen",
+    "Rename": "Umbenennen",
+    "Renaming": "Wird umbenannt"
+  },
+  "Thinking": "Denken...",
+  "Search": "Chats durchsuchen",
+  "NoChatsFound": "Keine Chats gefunden"
 }

@@ -16,9 +16,18 @@
   },
   "DailyLimit": "Limite giornaliero raggiunto. Torna domani!",
   "DeleteConfirm": {
-      "Title": "Eliminare la chat?",
-      "Message": "Questa azione eliminerà la chat. Non può essere annullata.",
-      "Cancel": "Annulla",
-      "Confirm": "Elimina"
-    }
+    "Title": "Eliminare la chat?",
+    "Message": "Questa azione eliminerà la chat. Non può essere annullata.",
+    "Cancel": "Annulla",
+    "Confirm": "Elimina"
+  },
+  "RenameConfirm": {
+    "Title": "Rinomina chat",
+    "Cancel": "Annulla",
+    "Rename": "Rinomina",
+    "Renaming": "Rinominando"
+  },
+  "Thinking": "Pensando...",
+  "Search": "Cerca chat",
+  "NoChatsFound": "Nessuna chat trovata"
 }

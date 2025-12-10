@@ -6,7 +6,7 @@ import { parseMarkdown } from '../../utils/format-text';
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { messages, hasStartedChat, isChatActive } = useChatContext();
+  const { messages, hasStartedChat, isChatActive, isSidebarOpen } = useChatContext();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -49,11 +49,11 @@ const MessageList: React.FC = () => {
     <>
       <div
         ref={messagesContainerRef}
-        className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-10 lg:px-40 pt-8`}
+        className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-4 lg:px-40 pt-8`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {!hasStartedChat ? (
-          <div className="flex flex-col items-center w-full pb-4">
+          <div className="flex flex-col items-center w-full lg:pb-4">
             <span className="lg:text-3xl font-semibold leading-tight text-center flex flex-col">
               <p className="whitespace-pre-line">{t('HelloText')}</p>
             </span>
@@ -84,7 +84,7 @@ const MessageList: React.FC = () => {
         )}
       </div>
 
-      {showScrollButton && (
+      {showScrollButton && !isSidebarOpen && (
         <div className="fixed bottom-1/4 left-1/2 transform -translate-x-1/2 z-50">
           <div
             className="h-10 w-10 border border-primary rounded-full items-center flex justify-center cursor-pointer bg-white shadow-lg hover:shadow-xl transition-all duration-200"
