@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import DesktopSidebar from './DesktopSidebar';
 import MobileSidebar from './MobileSidebar';
 import MobileHeader from './MobileHeader';
 import DeleteChatModal from './modals/DeleteChatModal';
 import RenameChatModal from './modals/RenameChatModal';
 import { useChatContext } from '../hooks/useChatContext';
+import { useChatActions } from '../hooks/useChatActions';
 
 const Sidebar: React.FC = () => {
   const { 
@@ -23,15 +24,32 @@ const Sidebar: React.FC = () => {
     setEditingChatName,
     handleSaveRename
   } = useChatContext();
-  
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showRenameModal, setShowRenameModal] = useState(false);
 
-  const currentChat = useMemo(() => {
-    return chats.find(chat => chat.id === currentChatId);
-  }, [chats, currentChatId]);
+  const {
+    searchQuery,
+    isMenuOpen,
+    showDeleteModal,
+    showRenameModal,
+    currentChat,
+    setSearchQuery,
+    setShowDeleteModal,
+    setShowRenameModal,
+    handleNewChatClick,
+    handleDotsClick,
+    handleMenuClose,
+    handleRenameClick,
+    handleDeleteClick,
+    confirmDelete,
+    confirmRename,
+  } = useChatActions({
+    currentChatId,
+    chats,
+    editingChatName,
+    handleNewChat,
+    handleDeleteChat,
+    handleRenameChat,
+    handleSaveRename,
+  });
 
   const sidebarClasses = useMemo(() => {
     const baseClasses = 'border-r h-full absolute top-0 ease-in-out';
@@ -41,44 +59,6 @@ const Sidebar: React.FC = () => {
     return `${baseClasses} ${activeClasses}`;
   }, [isChatActive]);
 
-  const handleNewChatClick = () => {
-    handleNewChat();
-    setSearchQuery('');
-  };
-
-  const handleDotsClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleRenameClick = () => {
-    setIsMenuOpen(false);
-    if (currentChatId) {
-      handleRenameChat(currentChatId);
-    }
-    setShowRenameModal(true);
-  };
-
-  const handleDeleteClick = () => {
-    setIsMenuOpen(false);
-    setShowDeleteModal(true);
-  };
-
-  const confirmDelete = () => {
-    if (currentChatId) {
-      handleDeleteChat(currentChatId);
-      handleNewChat();
-    }
-    setShowDeleteModal(false);
-  };
-
-  const confirmRename = () => {
-    if (currentChatId && editingChatName.trim()) {
-      handleSaveRename(currentChatId);
-    }
-    setShowRenameModal(false);
-  };
-
   return (
     <>
       <DesktopSidebar
@@ -86,7 +66,7 @@ const Sidebar: React.FC = () => {
         showBanner={showYellowBanner}
         sidebarClasses={sidebarClasses}
         onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
-        onNewChat={handleNewChat}
+        onNewChat={handleNewChatClick}
         onCloseBanner={() => setShowYellowBanner(false)}
       />
 
@@ -98,7 +78,7 @@ const Sidebar: React.FC = () => {
         onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
         onNewChat={handleNewChatClick}
         onMenuToggle={handleDotsClick}
-        onMenuClose={() => setIsMenuOpen(false)}
+        onMenuClose={handleMenuClose}
         onRename={handleRenameClick}
         onDelete={handleDeleteClick}
       />

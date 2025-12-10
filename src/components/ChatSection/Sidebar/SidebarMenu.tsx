@@ -5,7 +5,7 @@ interface SidebarMenuProps {
   isOpen: boolean;
   onRename: () => void;
   onDelete: () => void;
-  onClose: () => void;
+  onClose: (e: React.MouseEvent) => void;
 }
 
 const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onRename, onDelete, onClose }) => {
@@ -17,10 +17,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onRename, onDelete, o
     <>
       <div
         className="fixed inset-0 z-10"
-        onClick={(e) => {
-          e.stopPropagation();
-          onClose();
-        }}
+        onClick={onClose}
       />
       <div className="absolute right-2 top-14 bg-white border px-3 py-1.5 border-gray-20 rounded-lg shadow-lg z-20 w-[150px]">
         <button

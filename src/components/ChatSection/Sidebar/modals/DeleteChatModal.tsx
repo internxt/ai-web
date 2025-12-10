@@ -19,7 +19,7 @@ const DeleteChatModal: React.FC<DeleteChatModalProps> = ({ isOpen, onCancel, onC
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between">
-          <h3 className="text-2xl font-medium text-gray-100">{t('DeleteConfirm.Title') || 'Eliminar chat'}</h3>
+          <h3 className="text-2xl font-medium text-gray-100">{t('DeleteConfirm.Title') }</h3>
           <X
             height={20}
             width={20}
@@ -28,20 +28,20 @@ const DeleteChatModal: React.FC<DeleteChatModalProps> = ({ isOpen, onCancel, onC
           />
         </div>
         <p className="text-base text-gray-55">
-          {t('DeleteConfirm.Message') || '¿Estás seguro de que quieres eliminar este chat? Esta acción no se puede deshacer.'}
+          {t('DeleteConfirm.Message')}
         </p>
         <div className="flex gap-3 lg:justify-end">
           <button
             onClick={onCancel}
             className="px-4 py-2 w-1/2 text-base font-medium text-primary border-2 border-primary hover:bg-gray-1 rounded-lg"
           >
-            {t('DeleteConfirm.Cancel') || 'Cancelar'}
+            {t('DeleteConfirm.Cancel')}
           </button>
           <button
             onClick={onConfirm}
             className="px-4 py-2 w-1/2 text-base font-medium text-white bg-red hover:bg-red-dark rounded-lg"
           >
-            {t('DeleteConfirm.Confirm') || 'Eliminar'}
+            {t('DeleteConfirm.Confirm') }
           </button>
         </div>
       </div>

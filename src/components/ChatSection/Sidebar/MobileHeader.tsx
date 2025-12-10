@@ -9,7 +9,7 @@ interface MobileHeaderProps {
   onToggleSidebar: () => void;
   onNewChat: () => void;
   onMenuToggle: (e: React.MouseEvent) => void;
-  onMenuClose: () => void;
+  onMenuClose: (e: React.MouseEvent) => void;
   onRename: () => void;
   onDelete: () => void;
 }
@@ -28,10 +28,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 }) => {
   return (
     <div 
-      className={`${isChatActive ? 'flex' : 'hidden'} flex-row justify-between backdrop-blur-md bg-white/80 w-full lg:hidden absolute top-0 ${isSidebarOpen ? 'left-72' : 'left-0'} z-5`}
-      style={{
-        transition: 'left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-      }}
+      className={`flex flex-row justify-between backdrop-blur-md bg-white w-full lg:hidden absolute top-0 z-5 transition-all duration-700 ease-in-out ${isSidebarOpen ? 'left-72' : 'left-0'} ${isChatActive ? 'flex' : 'hidden'}`}
     >
       <div className="px-5 py-6 justify-center items-start flex flex-shrink-0">
         <SidebarSimple
@@ -41,6 +38,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
           onClick={onToggleSidebar}
         />
       </div>
+
       {hasStartedChat && !isSidebarOpen && (
         <div className="flex gap-1 flex-row px-5 py-6 justify-center items-start flex-shrink-0 relative">
           <NotePencil
@@ -49,14 +47,13 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
             className={`text-primary cursor-pointer ${!isSidebarOpen ? 'bg-white' : ''}`}
             onClick={onNewChat}
           />  
-          <div className='h-full bg-green-120 w-[1px]'></div>
+          <div className="h-full bg-green-120 w-[1px]"></div>
           <DotsThree
             height={24}
             width={24}
             className={`text-primary cursor-pointer ${!isSidebarOpen ? 'bg-white' : ''}`}
             onClick={onMenuToggle}
           />
-          
           <SidebarMenu
             isOpen={isMenuOpen}
             onRename={onRename}
