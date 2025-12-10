@@ -43,7 +43,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
         <div className="flex items-center justify-between">
           <div className="flex flex-row gap-8">
             <div className="flex flex-row items-center justify-start space-x-4 lg:space-x-0">
-              <a href="https://internxt.com/es" className="flex flex-shrink-0" target="_blank" rel="noopener noreferrer">
+              <a href="/" className="flex flex-shrink-0">
                 <img
                   loading="lazy"
                   className="h-[10.5px] w-24 select-none lg:h-3 lg:w-[110px]"
