@@ -21,7 +21,6 @@ const MessageList: React.FC = () => {
     }
   }, [messages]);
 
-  // Detectar si el usuario está scrolleado hacia arriba
   useEffect(() => {
     const container = messagesContainerRef.current;
     if (!container) return;
@@ -85,7 +84,6 @@ const MessageList: React.FC = () => {
         )}
       </div>
 
-      {/* Botón flotante - solo agregado, sin tocar nada más */}
       {showScrollButton && (
         <div className="fixed bottom-1/4 left-1/2 transform -translate-x-1/2 z-50">
           <div
