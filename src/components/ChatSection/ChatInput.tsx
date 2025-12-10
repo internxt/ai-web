@@ -19,19 +19,24 @@ const ChatInput: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-2 items-center px-10 lg:px-40 pb-8">
-      <div className="flex flex-row w-full lg:w-full bg-white border border-gray-25  rounded-lg items-center py-2 px-4 transition-shadow duration-300">
+      <div className="flex flex-row w-full lg:w-full bg-white border border-gray-25 rounded-lg items-center py-2 px-4 transition-shadow duration-300">
         <textarea
           className="min-h-[40px] max-h-[200px] text-base w-full resize-none py-2 outline-none focus:outline-none overflow-y-auto scrollbar-hide"
+          style={{ height: 'auto' }}
           placeholder={loading ? t('Loading') : t('SearchBar')}
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            e.target.style.height = 'auto';
+            e.target.style.height = `${Math.min(e.target.scrollHeight, 200)}px`;
+          }}
           onKeyPress={handleKeyPress}
           onFocus={() => setIsChatActive(true)}
           disabled={loading}
           rows={1}
         />
         <div
-          className={`flex border-l border-l-gray-25 flex-shrink-0 ${
+          className={`flex border-l border-l-gray-25 h-full flex-shrink-0 items-center ${
             loading || !inputValue.trim() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
           }`}
           onClick={handleSend}
