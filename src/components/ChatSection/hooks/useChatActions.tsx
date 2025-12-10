@@ -73,20 +73,17 @@ export const useChatActions = ({
   };
 
   return {
-    // State
     searchQuery,
     isMenuOpen,
     showDeleteModal,
     showRenameModal,
     currentChat,
     
-    // Setters
     setSearchQuery,
     setIsMenuOpen,
     setShowDeleteModal,
     setShowRenameModal,
     
-    // Actions
     handleNewChatClick,
     handleDotsClick,
     handleMenuClose,
