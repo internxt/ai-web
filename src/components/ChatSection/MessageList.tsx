@@ -22,7 +22,7 @@ const MessageList: React.FC = () => {
   return (
     <div
       ref={messagesContainerRef}
-      className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-10 lg:px-20 pt-8`}
+      className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-10 lg:px-40 pt-8`}
        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       {!hasStartedChat ? (
@@ -33,7 +33,7 @@ const MessageList: React.FC = () => {
         </div>
       ) : (
         <div
-          className={`flex flex-col gap-4 lg:w-3/4 mx-auto pb-4 ${
+          className={`flex flex-col gap-4 lg:w-full  pb-4 ${
             isChatActive ? 'opacity-100' : 'opacity-20'
           } transition-opacity duration-300`}
         >
