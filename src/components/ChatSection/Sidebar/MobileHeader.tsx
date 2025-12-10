@@ -1,9 +1,9 @@
 import { DotsThree, NotePencil, SidebarSimple } from 'phosphor-react';
 import SidebarMenu from './SidebarMenu';
 
-
 interface MobileHeaderProps {
   isSidebarOpen: boolean;
+  isChatActive: boolean;
   hasStartedChat: boolean;
   isMenuOpen: boolean;
   onToggleSidebar: () => void;
@@ -16,6 +16,7 @@ interface MobileHeaderProps {
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({
   isSidebarOpen,
+  isChatActive,
   hasStartedChat,
   isMenuOpen,
   onToggleSidebar,
@@ -27,7 +28,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 }) => {
   return (
     <div 
-      className={`flex flex-row justify-between backdrop-blur-md bg-white/80 w-full lg:hidden absolute top-0 ${isSidebarOpen ? 'left-72' : 'left-0'} z-5`}
+      className={`${isChatActive ? 'flex' : 'hidden'} flex-row justify-between backdrop-blur-md bg-white/80 w-full lg:hidden absolute top-0 ${isSidebarOpen ? 'left-72' : 'left-0'} z-5`}
       style={{
         transition: 'left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
       }}
