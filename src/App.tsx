@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import ChatSection from './components/ChatSection/ChatSection';
 import FeaturesSection from './components/FeaturesSection/FeaturesSection';
 import AccordionSection from './components/AccordionSection/AccordionSection';
@@ -9,6 +10,12 @@ import { ChatProvider } from './context/ChatContext';
 import ComparisonSection from './components/TableSection/ComparisonSection';
 
 function App() {
+  useEffect(() => {
+    if (window.location.hostname === 'ia.internxt.com') {
+      const newUrl = window.location.href.replace('ia.internxt.com', 'ai.internxt.com');
+      window.location.replace(newUrl);
+    }
+  }, []);
 
   return (
     <ChatProvider>
