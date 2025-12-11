@@ -53,6 +53,8 @@ const urls = {
     instagram: 'https://instagram.com/internxt',
     youtube: 'https://www.youtube.com/channel/UCW2SxWdVEAEACYuejCgpGwg/featured',
   },
+ INVALID_DOMAIN = 'ia.internxt.com';
+ VALID_DOMAIN = 'ai.internxt.com';
 };
 
 export default urls;
