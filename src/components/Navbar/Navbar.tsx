@@ -7,6 +7,7 @@ import { ItemsNavigation } from './ItemsNavigation';
 import LanguageBox from './LanguageBox';
 import LanguageMobileBox from './LanguageMobileBox';
 import logo from '../../logo_dark.svg';
+import { cleanTrackingParams } from '../../utils/urlHelper';
 
 export default function Navbar({ darkMode = false, fixed = false, hide = false, isLinksHidden = false, hideCTA = false }) {
   const [menuState, setMenuState] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
         <div className="flex items-center justify-between">
           <div className="flex flex-row gap-8">
             <div className="flex flex-row items-center justify-start space-x-4 lg:space-x-0">
-              <a href="/" className="flex flex-shrink-0">
+              <a href={cleanTrackingParams("https://internxt.com/en")} className="flex flex-shrink-0">
                 <img
                   loading="lazy"
                   className="h-[10.5px] w-24 select-none lg:h-3 lg:w-[110px]"
@@ -90,9 +91,8 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
                   >
                     <div className="mt-4 flex flex-col text-gray-100">
                       <a
-                        href="https://internxt.com/pricing"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        href={cleanTrackingParams("https://internxt.com/pricing")}
+                        
                         onClick={(e) => {
                           e.preventDefault();
                           handleNavigation('https://internxt.com/pricing');
@@ -135,19 +135,19 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
                                   !open ? 'hidden' : 'flex'
                                 } ${darkMode ? 'text-gray-30' : 'text-gray-60'} space-y-8 p-4`}
                               >
-                                <a href="https://internxt.com/drive" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2" >
+                                <a href={cleanTrackingParams("https://internxt.com/drive")}  className="flex flex-row space-x-2" >
                                   <p>{t('products.drive')}</p>
                                 </a>
-                                <a href="https://internxt.com/vpn" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/vpn")}  className="flex flex-row space-x-2">
                                   <p>{t('products.vpn')}</p>
                                 </a>
-                                <a href="https://internxt.com/antivirus" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/antivirus")}  className="flex flex-row space-x-2">
                                   <p>{t('products.antivirus')}</p>
                                 </a>
-                                <a href="https://internxt.com/cleaner" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/cleaner")}  className="flex flex-row space-x-2">
                                   <p>{t('products.cleaner')}</p>
                                 </a>
-                                <a href="https://internxt.com/meet" target="_blank" rel="noopener noreferrer"className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/meet")} className="flex flex-row space-x-2">
                                   <p>{t('products.meet')}</p>
                                 </a>
                               </Disclosure.Panel>
@@ -157,9 +157,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
                       </Disclosure>
 
                       <a
-                        href="https://internxt.com/business"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        href={cleanTrackingParams("https://internxt.com/business")}
                         onClick={(e) => {
                           e.preventDefault();
                           handleNavigation('https://internxt.com/business');
@@ -201,13 +199,13 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
                                   !open ? 'hidden' : 'flex'
                                 } ${darkMode ? 'text-gray-30' : 'text-gray-60'} space-y-8 p-4`}
                               >
-                                <a href="https://internxt.com/privacy" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/privacy")}  className="flex flex-row space-x-2">
                                   <p>{t('ourValues.privacy')}</p>
                                 </a>
-                                <a href="https://internxt.com/open-source" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/open-source")}  className="flex flex-row space-x-2">
                                   <p>{t('ourValues.openSource')}</p>
                                 </a>
-                                <a href="https://internxt.com/sustainability" target="_blank" rel="noopener noreferrer" className="flex flex-row space-x-2">
+                                <a href={cleanTrackingParams("https://internxt.com/sustainability")}  className="flex flex-row space-x-2">
                                   <p>{t('ourValues.sustainability')}</p>
                                 </a>
                               </Disclosure.Panel>
@@ -217,9 +215,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
                       </Disclosure>
 
                       <a
-                        href="https://internxt.com/about"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        href={cleanTrackingParams("https://internxt.com/about")}
                         onClick={(e) => {
                           e.preventDefault();
                           handleNavigation('https://internxt.com/about');

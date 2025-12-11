@@ -1,5 +1,6 @@
 import { CaretDown } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
+import { cleanTrackingParams } from '../../utils/urlHelper';
 
 interface NavigationLinkProps {
   href: string;
@@ -59,9 +60,7 @@ const DropdownMenu = ({ label, items, darkMode }: DropdownMenuProps) => {
           {items.map(({ href, text }) => (
             <a
               key={text}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={cleanTrackingParams(href)}
               className={`flex flex-row justify-start rounded-lg px-4 py-2 text-base font-medium text-cool-gray-80 ${dropdownBgClasses}`}
             >
               {text}
@@ -88,7 +87,7 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
     <div className="links">
       <div className="hidden items-center space-x-0 lg:inline-flex">
         <NavigationLink
-          href="https://internxt.com/pricing"
+          href={cleanTrackingParams("https://internxt.com/pricing")}
           text={t('links.pricing')}
           isActive={isPricingActive}
           isDarkMode={darkMode}
@@ -108,7 +107,7 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
         />
 
         <NavigationLink
-          href="https://internxt.com/business"
+          href={cleanTrackingParams("https://internxt.com/business")}
           text={t('links.business')}
           isActive={isBusinessActive}
           isDarkMode={darkMode}
@@ -125,7 +124,7 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
         />
 
         <NavigationLink
-          href="https://internxt.com/about"
+          href={cleanTrackingParams("https://internxt.com/about")}
           text={t('links.about')}
           isActive={isAboutActive}
           isDarkMode={darkMode}
