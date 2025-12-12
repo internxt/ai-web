@@ -1,7 +1,4 @@
-
-
-
-const AI_API_URL= 'https://backendai.internxt.com/';
+const AI_API_URL= import.meta.env.VITE_AI_SERVER_URL;
 
 interface Message {
   role: 'system' | 'user' | 'assistant';

@@ -1,6 +1,7 @@
 import { CaretDown } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { cleanTrackingParams } from '../../utils/urlHelper';
+import { Routes, productRoutes, valueRoutes } from '../../config/constants';
 
 interface NavigationLinkProps {
   href: string;
@@ -83,11 +84,21 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
   const isBusinessActive = currentPath === 'business';
   const isAboutActive = currentPath === 'about';
 
+  const productItems = productRoutes.map(({ href, key }) => ({
+    href,
+    text: t(`products.${key}`),
+  }));
+
+  const valueItems = valueRoutes.map(({ href, key }) => ({
+    href,
+    text: t(`ourValues.${key}`),
+  }));
+
   return (
     <div className="links">
       <div className="hidden items-center space-x-0 lg:inline-flex">
         <NavigationLink
-          href={cleanTrackingParams("https://internxt.com/pricing")}
+          href={cleanTrackingParams(Routes.pricing)}
           text={t('links.pricing')}
           isActive={isPricingActive}
           isDarkMode={darkMode}
@@ -95,19 +106,12 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
 
         <DropdownMenu
           label={t('links.products')}
-          items={[
-            { href: 'https://internxt.com/drive', text: t('products.drive') },
-            { href: 'https://internxt.com/antivirus', text: t('products.antivirus') },
-            { href: 'https://internxt.com/vpn', text: t('products.vpn') },
-            { href: 'https://internxt.com/cleaner', text: t('products.cleaner') },
-            { href: 'https://internxt.com/meet', text: t('products.meet') },
-            { href: 'https://ai.internxt.com', text: t('products.ia') },
-          ]}
+          items={productItems}
           darkMode={darkMode}
         />
 
         <NavigationLink
-          href={cleanTrackingParams("https://internxt.com/business")}
+          href={cleanTrackingParams(Routes.business)}
           text={t('links.business')}
           isActive={isBusinessActive}
           isDarkMode={darkMode}
@@ -115,16 +119,12 @@ export const ItemsNavigation = ({ darkMode, shouldHideItems }: ItemsNavigationPr
 
         <DropdownMenu
           label={t('links.ourValues')}
-          items={[
-            { href: 'https://internxt.com/privacy', text: t('ourValues.privacy') },
-            { href: 'https://internxt.com/open-source', text: t('ourValues.openSource') },
-            { href: 'https://internxt.com/green-cloud-computing', text: t('ourValues.sustainability') },
-          ]}
+          items={valueItems}
           darkMode={darkMode}
         />
 
         <NavigationLink
-          href={cleanTrackingParams("https://internxt.com/about")}
+          href={cleanTrackingParams(Routes.about)}
           text={t('links.about')}
           isActive={isAboutActive}
           isDarkMode={darkMode}
