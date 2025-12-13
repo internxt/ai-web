@@ -28,7 +28,7 @@
       "descriptions": [
         "Con otros asistentes de IA, revisores humanos leen algunas discusiones grabadas para mejorar su IA. Con Internxt, ninguno de tus chats o registros se guarda en nuestros servidores y no pueden ser vistos, compartidos o utilizados para rastrearte o perfilarte.",
         "Chatea con total confianza sabiendo que todos los chats y conversaciones están protegidos y bloqueados directamente en tu dispositivo con cifrado de conocimiento cero. Ni siquiera Internxt puede leer tus chats.",
-        "Como todo en Internxt, nuestro modelo de IA es completamente de código abierto. Cualquiera puede verificar que nuestra plataforma es segura y privada para respaldar que nunca utilizamos tus datos para entrenar LLMs.",
+        "Como todo en Internxt, nuestro modelo de IA es completamente de código abierto, y utiliza un mix modelos open source como gpt-oss-120b y qwen3-32b, entre otros. Cualquiera puede verificar que nuestra plataforma es segura y privada para respaldar que nunca utilizamos tus datos para entrenar LLMs.",
         "Internxt tiene su sede en Valencia, España, y por lo tanto estamos sujetos al RGPD (GDPR), lo que te da control para eliminar tus datos en cualquier momento. Nada se comparte con terceros, gobiernos o cualquier otra persona."
       ]
     }
