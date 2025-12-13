@@ -23,7 +23,7 @@
       "descriptions": [
         "With other AI assistants, human reviewers read some recorded discussions to improve their AI. With Internxt, none of your chats or logs are saved on our servers and can’t be seen, shared, or used to track or profile you.",
         "Chat in total confidence knowing all chats and conversations are protected and locked directly on your device with zero-knowledge encryption. Not even Internxt can read your chats.",
-        "Like everything at Internxt, our AI model is completely open source. Anyone can verify our platform as secure and private to back up that we never use your data to train LLMs.",
+        "Like everything at Internxt, our AI model is completely open source, and leverages open source models such as gpt-oss-120b and qwen3-32b, amongst others. Anyone can verify our platform as secure and private to back up that we never use your data to train LLMs.",
         "Internxt is based in Valencia, Spain, and we are therefore subject to GDPR, giving you control to delete your data at any time. Nothing is shared with third parties, governments, or anyone else."
       ]
     }
