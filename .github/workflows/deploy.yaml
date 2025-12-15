@@ -15,6 +15,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
       - run: echo VITE_AI_SERVER_URL=${{ secrets.AI_SERVER_URL }} >> ./.env
+      - run: echo VITE_AI_SYSTEM_PROMPT=${{ secrets.AI_SYSTEM_PROMPT }} >> ./.env
     
       # Setup node
       - name: Use Node.js ${{ matrix.node-version }}
