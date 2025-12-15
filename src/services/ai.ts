@@ -1,4 +1,5 @@
-const AI_API_URL= import.meta.env.VITE_AI_SERVER_URL;
+const AI_API_URL = import.meta.env.VITE_AI_SERVER_URL;
+const AI_SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
 
 interface Message {
   role: 'system' | 'user' | 'assistant';
@@ -40,13 +41,20 @@ export const aiService = {
     },
   ): Promise<string> {
     try {
+      const hasSystemMessage = messages.some(msg => msg.role === 'system');
+      
+      const finalMessages = hasSystemMessage ? messages : [
+        { role: 'system' as const, content: AI_SYSTEM_PROMPT },
+        ...messages
+      ];
+
       const response = await fetch(AI_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages,
+          messages: finalMessages,
           max_tokens: options?.max_tokens || 4000,
           temperature: options?.temperature || 0.7,
         }),
