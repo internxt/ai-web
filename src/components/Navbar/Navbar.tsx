@@ -27,6 +27,19 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
     setMenuState(false);
   };
 
+  const handleClick = (e: { preventDefault: () => void; stopPropagation: () => void; nativeEvent: { stopImmediatePropagation: () => void; }; }) => {
+    e.preventDefault();
+    
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+
+    const destination = "https://internxt.com/en";
+    
+    const cleanUrl = cleanTrackingParams(destination);
+
+    window.location.href = cleanUrl;
+  };
+
   return (
     <div
       id="navbar"
@@ -44,14 +57,18 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
         <div className="flex items-center justify-between">
           <div className="flex flex-row gap-8">
             <div className="flex flex-row items-center justify-start space-x-4 lg:space-x-0">
-              <a href={cleanTrackingParams("https://internxt.com/en")} className="flex flex-shrink-0">
+            <button
+              onClick={handleClick}
+              className="flex flex-shrink-0 border-none bg-transparent cursor-pointer p-0 m-0"
+              style={{ appearance: 'none', WebkitAppearance: 'none' }}
+            >
                 <img
                   loading="lazy"
                   className="h-[10.5px] w-24 select-none lg:h-3 lg:w-[110px]"
                   src={logo}
                   alt="Internxt logo"
                 />
-              </a>
+              </button>
             </div>
             <ItemsNavigation darkMode={darkMode} shouldHideItems={isLinksHidden}  />
           </div>
