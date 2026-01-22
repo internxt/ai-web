@@ -1,4 +1,15 @@
 import type { JSX } from "react";
+import { useHostConfig } from '../hooks/useHostConfig';
+
+export const useBrandText = () => {
+  const { assets } = useHostConfig();
+  
+  const replaceBrandName = (text: string) => {
+    return text.replace(/{{host}}/g, assets.brandName);
+  };
+  
+  return replaceBrandName;
+};
 
 export const blueText = (text: string) => {
   if (!text) return null;
