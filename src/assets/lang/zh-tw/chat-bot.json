@@ -2,7 +2,7 @@
   "HelloText": "你好！\n今天想問什麼？",
   "SearchBar": "隨意提問",
   "Terms": {
-    "text": "使用 Internxt AI 即代表您同意我們的",
+    "text": "使用 {{host}} AI 即代表您同意我們的",
     "blueText": "條款"
   },
   "Info": "您的資料保有隱私。所有聊天記錄皆儲存於您的本地裝置上。",

@@ -2,7 +2,7 @@
   "HelloText": "Ciao!\nCosa vorresti chiedere oggi?",
   "SearchBar": "Chiedi qualsiasi cosa",
   "Terms": {
-    "text": "Utilizzando Internxt AI, accetti i nostri",
+    "text": "Utilizzando {{host}} AI, accetti i nostri",
     "blueText": "Termini"
   },
   "Info": "I tuoi dati rimangono privati. Tutte le chat sono salvate localmente sul tuo dispositivo.",
