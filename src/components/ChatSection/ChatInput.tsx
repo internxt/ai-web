@@ -7,7 +7,7 @@ import { useBrandText } from '../../utils/format-text';
 
 const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { inputValue, setInputValue, handleSend, setIsChatActive, loading } = useChatContext();
+  const { inputValue, isChatActive, setInputValue, handleSend, setIsChatActive, loading } = useChatContext();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const resetTextareaHeight = useCallback(() => {

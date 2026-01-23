@@ -18,48 +18,49 @@ const ChatSection: React.FC = () => {
       : 'bg-white/0 flex flex-row rounded-2xl border border-green-120/0 w-full h-[80vh] overflow-hidden transition-all duration-300 relative';
   }, [isChatActive]);
 
-  return (
-    <section
-      className={`flex flex-col items-center lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
-      style={{ background: isTelefonica ? 'linear-gradient(180deg, #0066FF 0%, #F4F8FF 100%)' : 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
-    >
-      <div className={mainContainerClasses} ref={chatSectionRef}>
-        <Sidebar />
-        
-        {isSidebarOpen && (
-          <div 
-            className="lg:hidden absolute inset-0 bg-black/20 z-5 animate-in fade-in duration-200"
-            onClick={() => setIsSidebarOpen(false)}
-          />
-        )}
+    const { isTelefonica } = useHostConfig();  
+    return (
+      <section
+        className={`flex flex-col items-center pt-28 lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
+        style={{ background: isTelefonica ? 'linear-gradient(180deg, #0066FF 0%, #F4F8FF 100%)' : 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
+      >
+        <div className={mainContainerClasses} ref={chatSectionRef}>
+          <Sidebar />
+          
+          {isSidebarOpen && (
+            <div 
+              className="lg:hidden absolute inset-0 bg-black/20 z-5 animate-in fade-in duration-200"
+              onClick={() => setIsSidebarOpen(false)}
+            />
+          )}
 
-        <div
-          className={`flex flex-col w-full h-full ${
-            !hasStartedChat ? 'justify-center gap-5 lg:gap-8' : 'justify-between pt-20 lg:pt-0'
-          } ${isSidebarOpen ? ' lg:ml-64' : 'lg:ml-14'}`}
-          style={{
-            transition: 'margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+          <div
+            className={`flex flex-col w-full h-full ${
+              !hasStartedChat ? 'justify-center gap-5 lg:gap-8' : 'justify-between pt-20 lg:pt-0'
+            } ${isSidebarOpen ? ' lg:ml-64' : 'lg:ml-14'}`}
+            style={{
+              transition: 'margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
+            <MessageList />
+            <ChatInput />
+          </div>
+        </div>
+
+        <div 
+          className="flex flex-row border border-primary text-primary rounded-md py-3 lg:py-4 px-5 lg:px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
+          onClick={() => {
+            const element = document.getElementById('chatInPrivate');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           }}
         >
-          <MessageList />
-          <ChatInput />
+          <p className="flex text-primary text-base lg:font-medium">{t('Cta')}</p>
+          <ArrowDown height={24} width={24} className='hidden lg:flex' />
+          <ArrowDown height={20} width={20} className='lg:hidden flex' />
         </div>
-      </div>
-
-      <div 
-        className="flex flex-row border border-primary text-primary rounded-md py-3 lg:py-4 px-5 lg:px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
-        onClick={() => {
-          const element = document.getElementById('chatInPrivate');
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }}
-      >
-        <p className="flex text-primary text-base lg:font-medium">{t('Cta')}</p>
-        <ArrowDown height={24} width={24} className='hidden lg:flex' />
-        <ArrowDown height={20} width={20} className='lg:hidden flex' />
-      </div>
-    </section>
+      </section>
   );
 };
 
