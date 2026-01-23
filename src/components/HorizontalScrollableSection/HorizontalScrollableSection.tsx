@@ -1,6 +1,7 @@
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { useRef, useState, useEffect, type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useBrandText } from '../../utils/format-text';
 
 interface HorizontalScrollableProps {
   cardsWidth?: string;
@@ -8,15 +9,18 @@ interface HorizontalScrollableProps {
 }
 
 export default function HorizontalScrollableSection({
-  
   cardsWidth = '400px',
   cardsHeight = 'auto',
 }: Readonly<HorizontalScrollableProps>): JSX.Element {
   const { t } = useTranslation();
-  const titles = t('HorizontalScrollableSection.scrollableSection.titles', { returnObjects: true }) as string[];
-  const descriptions = t('HorizontalScrollableSection.scrollableSection.descriptions', {
+
+  const replaceBrandName = useBrandText();
+  const rawTitles = t('HorizontalScrollableSection.scrollableSection.titles', { returnObjects: true }) as string[];
+  const titles = rawTitles.map(title => replaceBrandName(title));
+  const rawDescriptions = t('HorizontalScrollableSection.scrollableSection.descriptions', {
     returnObjects: true,
   }) as string[];
+  const descriptions = rawDescriptions.map(desc => replaceBrandName(desc));
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -109,7 +113,7 @@ export default function HorizontalScrollableSection({
       <div className="h-[1px] bg-neutral-35 w-full mb-12 lg:mb-20" />
       <div className="flex h-min w-[345px] flex-col justify-center gap-6 lg:w-[850px]">
         <p className="text-30 font-bold leading-tight text-gray-95 lg:w-[780px] lg:text-3xl">
-          {t('HorizontalScrollableSection.title')}
+          {replaceBrandName(t('HorizontalScrollableSection.title'))}
         </p>
       </div>
 

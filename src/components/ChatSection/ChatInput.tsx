@@ -2,6 +2,8 @@ import { PaperPlaneRight } from 'phosphor-react';
 import { useCallback, useRef, type KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
+import { useHostConfig } from '../../hooks/useHostConfig';
+import { useBrandText } from '../../utils/format-text';
 
 const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -28,6 +30,14 @@ const ChatInput: React.FC = () => {
     },
     [inputValue, loading, handleSendWrapper],
   );
+
+  const { isTelefonica } = useHostConfig();
+  const replaceBrandName = useBrandText();
+
+  const getTextColor = () => {
+    if (!isTelefonica) return 'text-gray-35';
+    return isChatActive ? 'text-gray-35' : 'text-white';
+  };
 
   return (
     <div className="flex flex-col gap-2 items-center px-4 lg:px-40 pb-8">
@@ -58,9 +68,17 @@ const ChatInput: React.FC = () => {
           <PaperPlaneRight height={22} width={22} className="ml-3 text-neutral-90 flex lg:hidden" />
         </div>
       </div>
-      <span className="flex gap-1 lg:gap-2 text-xs flex-col text-center mt-1 lg:mt-2 text-gray-35 ">
+      <span 
+        className={`
+          flex gap-1 lg:gap-2 text-10 lg:text-xs flex-col text-center mt-1 lg:mt-2 
+          ${getTextColor()} 
+          transition-colors 
+          duration-700 
+          ease-in-out
+        `}
+      >
         <p>
-          {t('Terms.text')}{' '}
+          {replaceBrandName(t('Terms.text'))}{' '}
           <a
             href="https://internxt.com/legal"
             target="_blank"

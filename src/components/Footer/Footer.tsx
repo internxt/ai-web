@@ -8,11 +8,11 @@ import youtubeIcon from '../../assets/images/youtube.png';
 import redditIcon from '../../assets/images/Reddit.png';
 import linkedinIcon from '../../assets/images/linkedin.png';
 import twitterIcon from '../../assets/images/twitter.png';
-import internxtLogo from '../../logo_dark.svg';
 import GDPRLogo from '../../assets/images/GDPR.png';
 import appStoreLogo from '../../assets/images/AppStore.png';
 import playStoreLogo from '../../assets/images/GooglePlay.png';
 import qr from '../../assets/images/qr.png';
+import { useHostConfig } from '../../hooks/useHostConfig';
 interface PlatformLinks {
   iPhone: string;
   Android: string;
@@ -63,6 +63,8 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
   const getImage = (path: string) => {
     return path;
   };
+
+  const { assets } = useHostConfig();
 
   return (
     <section
@@ -750,7 +752,7 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
 
               <div className="flex flex-row items-center space-x-4">
                 <a href="/" target="_blank" rel="noopener noreferrer" className="flex flex-shrink-0">
-                  <img width={110} height={12} loading="lazy" src={internxtLogo} alt="Internxt logo" />
+                  <img width={110} height={12} loading="lazy" src={assets.logo} alt="Internxt logo" />
                 </a>
                 <p className={`text-sm font-medium ${darkMode ? 'text-cool-gray-30' : 'text-cool-gray-60'}`}>
                   {t('FooterSection.copyright.line1') + year + t('FooterSection.copyright.line2')}
@@ -1204,7 +1206,7 @@ export default function Footer({ lang = 'en', hideNewsletter = false, darkMode =
               </p>
 
               <a href="/" target="_blank" rel="noopener noreferrer" className="flex flex-shrink-0 text-gray-100">
-                <img width={96} height={10.5} src={internxtLogo} loading="lazy" alt="Internxt logo" />
+                <img width={96} height={10.5} src={assets.logo} loading="lazy" alt="Internxt logo" />
               </a>
             </div>
           </div>
