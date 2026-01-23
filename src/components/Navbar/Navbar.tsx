@@ -6,8 +6,9 @@ import { CaretDown, CaretUp } from '@phosphor-icons/react';
 import { ItemsNavigation } from './ItemsNavigation';
 import LanguageBox from './LanguageBox';
 import LanguageMobileBox from './LanguageMobileBox';
-import logo from '../../logo_dark.svg';
 import { cleanTrackingParams } from '../../utils/urlHelper';
+import { useHostConfig } from '../../hooks/useHostConfig';
+
 
 export default function Navbar({ darkMode = false, fixed = false, hide = false, isLinksHidden = false, hideCTA = false }) {
   const [menuState, setMenuState] = useState(false);
@@ -39,13 +40,12 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
 
     window.location.href = cleanUrl;
   };
+  const { assets, isTelefonica } = useHostConfig();
 
   return (
     <div
       id="navbar"
-      className={`${hide ? 'hidden' : ''} ${
-        isLinksHidden ? 'top-0' : 'top-18'
-      } top-18 fixed left-0 flex h-20 w-full items-center ${
+      className={`${hide ? 'hidden' : ''} top-18 fixed left-0 top-0 flex h-14 lg:h-20 w-full items-center ${
         darkMode ? (scrolled ? 'bg-black bg-opacity-100' : 'bg-black bg-opacity-0') : 'bg-white'
       } transition-all duration-100 lg:h-16 ${
         fixed ? (darkMode ? 'bg-opacity-0' : 'bg-opacity-100') : ''
@@ -64,8 +64,8 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
             >
                 <img
                   loading="lazy"
-                  className="h-[10.5px] w-24 select-none lg:h-3 lg:w-[110px]"
-                  src={logo}
+                  className={`h-[10.5px] w-24 select-none ${isTelefonica ? 'lg:h-8 lg:w-[133px]':'lg:h-3 lg:w-[110px]'} `}
+                  src={assets.logo}
                   alt="Internxt logo"
                 />
               </button>

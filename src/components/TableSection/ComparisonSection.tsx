@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
+import { useBrandText } from '../../utils/format-text';
 
 interface TableRow {
   feature: string;
@@ -8,6 +9,7 @@ interface TableRow {
 
 const ComparisonSection: React.FC = () => {
   const { t } = useTranslation('page');
+
 
   try {
     const competitors = t('ComparisonSection.table.competitors', { returnObjects: true }) as string[];
@@ -39,11 +41,12 @@ const ComparisonSection: React.FC = () => {
 
 const Header: React.FC = () => {
   const { t } = useTranslation('page');
+  const replaceBrandName = useBrandText();
 
   return (
-    <div className="flex flex-col items-center text-center gap-6 lg:px-80 lea">
-      <h2 className="text-3xl lg:text-4xl font-bold text-gray-100 leading-tight">{t('ComparisonSection.title')}</h2>
-      <p className="text-xl text-gray-55 leading-tight">{t('ComparisonSection.descriptions')}</p>
+    <div className="flex flex-col items-center text-center gap-6 leading-tight w-full">
+      <h2 className="text-30 lg:text-4xl font-bold text-gray-100 leading-tight">{t('ComparisonSection.title')}</h2>
+      <p className="text-lg lg:text-xl text-gray-55 leading-tight px-0 lg:px-80">{replaceBrandName(t('ComparisonSection.descriptions'))}</p>
     </div>
   );
 };
@@ -77,6 +80,7 @@ interface DesktopTableHeaderProps {
 }
 
 const DesktopTableHeader: React.FC<DesktopTableHeaderProps> = ({ competitors }) => {
+  const replaceBrandName = useBrandText();
   const getHeaderCellClass = (index: number, total: number): string => {
     const baseClasses = 'py-4 px-6 text-center ring-inset ring-1 ring-neutral-25 text-sm font-semibold';
     const isFirst = index === 0;
@@ -96,7 +100,7 @@ const DesktopTableHeader: React.FC<DesktopTableHeaderProps> = ({ competitors }) 
         <th className="text-left py-4 px-6"></th>
         {competitors.map((competitor, index) => (
           <th key={index} className={getHeaderCellClass(index, competitors.length)}>
-            {competitor}
+            {replaceBrandName(competitor)}
           </th>
         ))}
       </tr>
@@ -179,7 +183,6 @@ const DesktopTableRow: React.FC<DesktopTableRowProps> = ({ row, rowIndex, compet
 
       {competitors.map((competitor, colIndex) => {
         const competitorKey = normalizeCompetitorKey(competitor);
-
         return (
           <td key={colIndex} className={getCompetitorCellClass(colIndex)}>
             <div className="flex items-center justify-center h-16">{row[competitorKey]}</div>
