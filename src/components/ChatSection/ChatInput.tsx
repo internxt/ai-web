@@ -9,6 +9,7 @@ const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
   const { inputValue, isChatActive, setInputValue, handleSend, setIsChatActive, loading } = useChatContext();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const hasInteractedRef = useRef(false); 
 
   const resetTextareaHeight = useCallback(() => {
     if (textareaRef.current) {
@@ -19,6 +20,13 @@ const ChatInput: React.FC = () => {
   const handleSendWrapper = useCallback(() => {
     handleSend();
     resetTextareaHeight();
+    hasInteractedRef.current = true;
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 100);
   }, [handleSend, resetTextareaHeight]);
 
   const handleKeyPress = useCallback(
@@ -31,6 +39,20 @@ const ChatInput: React.FC = () => {
     [inputValue, loading, handleSendWrapper],
   );
 
+  const handleFocus = useCallback(() => {
+    setIsChatActive(true);
+    
+    if (hasInteractedRef.current) {
+      setTimeout(() => {
+        const currentScroll = window.scrollY;
+        window.scrollTo({
+          top: Math.max(0, currentScroll - 170), 
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }, [setIsChatActive]);
+
   const { isTelefonica } = useHostConfig();
   const replaceBrandName = useBrandText();
 
@@ -38,6 +60,17 @@ const ChatInput: React.FC = () => {
     if (!isTelefonica) return 'text-gray-35';
     return isChatActive ? 'text-gray-35' : 'text-white';
   };
+
+  const handleBlur = useCallback(() => {
+    if (hasInteractedRef.current) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col gap-2 items-center px-4 lg:px-40 pb-8">
@@ -54,7 +87,8 @@ const ChatInput: React.FC = () => {
             e.target.style.height = `${Math.min(e.target.scrollHeight, 200)}px`;
           }}
           onKeyPress={handleKeyPress}
-          onFocus={() => setIsChatActive(true)}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           disabled={loading}
           rows={1}
         />

@@ -29,7 +29,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
   return (
     <div 
       className={`
-        flex flex-row justify-between backdrop-blur-md bg-red w-full lg:hidden absolute top-0 z-5 
+        flex flex-row justify-between backdrop-blur-md w-full lg:hidden absolute top-0 z-5 
         transition-all duration-500 ease-in-out 
         ${isSidebarOpen ? 'left-72' : 'left-0'} 
         ${isChatActive 

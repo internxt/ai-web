@@ -7,7 +7,7 @@ import { useHostConfig } from '../../hooks/useHostConfig';
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { messages, hasStartedChat, isChatActive, isSidebarOpen } = useChatContext();
+  const { messages, hasStartedChat, isChatActive, isSidebarOpen, loading } = useChatContext();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
