@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowDown } from '@phosphor-icons/react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useChatContext } from './hooks/useChatContext';
 import { parseMarkdown } from '../../utils/format-text';
 import { useHostConfig } from '../../hooks/useHostConfig';
@@ -21,7 +22,7 @@ const MessageList: React.FC = () => {
         behavior: 'smooth',
       });
     }
-  }, [messages]);
+  }, [messages, loading]);
 
   useEffect(() => {
     const container = messagesContainerRef.current;
@@ -97,6 +98,20 @@ const MessageList: React.FC = () => {
                 </div>
               </div>
             ))}
+            
+            {loading && (
+              <div className="flex justify-start">
+                <div className="p-4 rounded-lg">
+                  <DotLottieReact
+                    src="https://lottie.host/c8f0a927-ba3b-4a55-9316-0d9165ade51b/GikTg8ggrN.lottie"
+                    loop
+                    autoplay
+                    style={{ width: 60, height: 60 }}
+                  />
+                </div>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
         )}

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
+    "@lottiefiles/dotlottie-react": "^0.17.13",
     "@phosphor-icons/react": "^2.1.10",
     "hamburger-react": "^2.5.2",
     "i18next": "^25.6.3",
