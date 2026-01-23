@@ -32,7 +32,7 @@ function App() {
     
     const metaTheme = document.querySelector<HTMLMetaElement>("meta[name='theme-color']");    
     if (metaTheme) {
-        metaTheme.content = isTelefonica ? '#00358E' : '#CCE0FF';
+        metaTheme.content = isTelefonica ? '#00358E' : '#CCE0F0';
     }
 
     if (window.location.hostname === Domains.invalid) {

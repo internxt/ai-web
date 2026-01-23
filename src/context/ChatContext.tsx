@@ -16,6 +16,8 @@ interface ChatContextType {
   editingChatName: string;
   showYellowBanner: boolean;
   loading: boolean;
+  isTyping: boolean;
+  setIsTyping: (typing: boolean) => void;
   setInputValue: (value: string) => void;
   setIsChatActive: (active: boolean) => void;
   setIsSidebarOpen: (open: boolean) => void;
@@ -45,6 +47,8 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [editingChatName, setEditingChatName] = useState('');
   const [showYellowBanner, setShowYellowBanner] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+
 
   const convertMessagesToAIFormat = (messages: Message[]) => {
     return messages.map((msg) => ({
@@ -195,6 +199,8 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     editingChatName,
     showYellowBanner,
     loading,
+    isTyping,
+    setIsTyping,
     setInputValue,
     setIsChatActive,
     setIsSidebarOpen,
