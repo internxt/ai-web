@@ -1,7 +1,6 @@
 import { useState, type JSX } from 'react';
 import { PlusCircle } from '@phosphor-icons/react';
 import { blueText } from '../../utils/format-text';
-import { useBrandText } from '../../utils/format-text';
 
 interface FaqAccordionProps {
   question: string;
@@ -18,7 +17,6 @@ export default function FaqAccordion({
   textColor,
 }: FaqAccordionProps): JSX.Element {
   const [active, setActive] = useState(false);
-  const replaceBrandName = useBrandText();
 
   return (
     <div className="flex flex-col items-stretch justify-start">
@@ -32,7 +30,7 @@ export default function FaqAccordion({
             isQuestionBigger ? 'md:text-2xl' : 'md:text-xl'
           }`}
         >
-          {replaceBrandName(question)}
+          {question}
         </h3>
         <PlusCircle
           size={32}
@@ -47,7 +45,7 @@ export default function FaqAccordion({
       >
         {answer.map((text, index) => (
           <p key={index} className="leading-relaxed">
-            {blueText(replaceBrandName(text))}
+            {blueText(text)}
           </p>
         ))}
       </div>

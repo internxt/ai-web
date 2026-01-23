@@ -1,14 +1,11 @@
 import { useState, type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import featureImage from '../../assets/images/DriveMobile.png';
-import { useBrandText } from '../../utils/format-text';
 
 const CoreFeaturesSection = (): JSX.Element => {
   const { t } = useTranslation();
   const accordionTitles = t('AccordionSection.titles', { returnObjects: true }) as string[];
-  const replaceBrandName = useBrandText();
-const rawDescriptions = t('AccordionSection.descriptions', { returnObjects: true }) as string[];
-const accordionDescriptions = rawDescriptions.map(desc => replaceBrandName(desc));
+  const accordionDescriptions = t('AccordionSection.descriptions', { returnObjects: true }) as string[];
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const handleAccordionClick = (index: number) => {

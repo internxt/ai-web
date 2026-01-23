@@ -28,15 +28,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 }) => {
   return (
     <div 
-      className={`
-        flex flex-row justify-between backdrop-blur-md bg-red w-full lg:hidden absolute top-0 z-5 
-        transition-all duration-500 ease-in-out 
-        ${isSidebarOpen ? 'left-72' : 'left-0'} 
-        ${isChatActive 
-           ? 'opacity-100' 
-           : 'opacity-0 pointer-events-none'
-        }
-      `}
+      className={`flex flex-row justify-between backdrop-blur-md bg-white w-full lg:hidden absolute top-0 z-5 transition-all duration-700 ease-in-out ${isSidebarOpen ? 'left-72' : 'left-0'} ${isChatActive ? 'flex' : 'hidden'}`}
     >
       <div className="px-5 py-6 justify-center items-start flex flex-shrink-0">
         <SidebarSimple

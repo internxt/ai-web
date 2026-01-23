@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { ArrowDown } from '@phosphor-icons/react';
 import { useChatContext } from './hooks/useChatContext';
 import { parseMarkdown } from '../../utils/format-text';
-import { useHostConfig } from '../../hooks/useHostConfig';
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -11,7 +10,6 @@ const MessageList: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const { isTelefonica } = useHostConfig();
 
   useEffect(() => {
     if (messages.length > 0 && messagesEndRef.current && messagesContainerRef.current) {
@@ -47,33 +45,17 @@ const MessageList: React.FC = () => {
     }
   };
 
-  const getTextColor = () => {
-    if (!isTelefonica) return '';
-    return isChatActive ? 'text-gray-95' : 'text-white';
-  };
-
   return (
     <>
       <div
         ref={messagesContainerRef}
-        className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hiden pt-8' : ''} px-4 lg:px-40 pt-8`}
+        className={`${hasStartedChat ? 'flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide' : ''} px-4 lg:px-40 pt-8`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {!hasStartedChat ? (
           <div className="flex flex-col items-center w-full lg:pb-4">
-            <span className="text-xl lg:text-3xl font-semibold leading-tight text-center flex flex-col">
-              <p 
-                className={`
-                  ${getTextColor()} 
-                  whitespace-pre-line 
-                  transition-all 
-                  duration-700 
-                  ease-in-out
-                  animate-fade-in
-                `}
-              >
-                {t('HelloText')}
-              </p>
+            <span className="lg:text-3xl font-semibold leading-tight text-center flex flex-col">
+              <p className="whitespace-pre-line">{t('HelloText')}</p>
             </span>
           </div>
         ) : (

@@ -31,6 +31,7 @@ const ChatList: React.FC<ChatListProps> = ({ searchQuery = '' }) => {
   if (searchQuery.trim() && filteredChats.length === 0) {
     return (
       <>
+        <div className="h-[1px] bg-green-120 w-full flex-shrink-0 mt-2"></div>
         <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
           <p className="text-sm text-primary/60">
             {t('NoChatsFound')}
@@ -42,11 +43,12 @@ const ChatList: React.FC<ChatListProps> = ({ searchQuery = '' }) => {
 
   return (
     <>
+      <div className="h-[1px] bg-green-120 w-full flex-shrink-0 lg:mt-2"></div>
       <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide px-2">
         <p className="text-base font-medium text-gray-35 py-2">
           {'Chats'}
         </p>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-0.5">
           {filteredChats.map((chat, index) => (
             <ChatItem key={chat.id} chat={chat} index={index} />
           ))}

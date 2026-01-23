@@ -30,24 +30,25 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
       }}
     >
       <div
-        className={`flex flex-col w-full h-full ${isOpen ? 'px-3' : 'px-2'} py-4 gap-2 ${isOpen ? '' : ' items-center'}`}
+        className={`flex flex-col h-full ${isOpen ? 'px-3' : 'px-2'} py-4 gap-2 ${isOpen ? '' : ' items-center'}`}
       >
-        <div className={`h-10  flex flex-shrink-0 cursor-pointer w-full items-center ${isOpen ? 'justify-start' : ' justify-center'} `} onClick={onToggle}>
+        <div className="h-10 w-10 justify-center items-center flex flex-shrink-0">
           <SidebarSimple
-            height={24}
-            width={24}
-            className="text-primary "
+            height={30}
+            width={30}
+            className="text-primary cursor-pointer"
+            onClick={onToggle}
           />
         </div>
-        <div className="h-[1px] bg-green-120 w-full flex-shrink-0"/>
+        <div className="h-[1px] bg-green-120 w-full flex-shrink-0"></div>
         <div
-          className={`h-10 w-full justify-start items-center flex flex-shrink-0 cursor-pointer ${isOpen ? 'justify-start' : ' justify-center'}`}
+          className="h-10 w-full justify-start items-center pl-1 flex flex-shrink-0 cursor-pointer"
           onClick={onNewChat}
+          title={t('Newchat')}
         >
-          <NotePencil height={24} width={24} className="text-primary" />
-          {isOpen && <span className="ml-2 text-primary font-medium text-base whitespace-nowrap">{t('Newchat')}</span>}
+          <NotePencil height={30} width={30} className="text-primary" />
+          {isOpen && <span className="ml-2 text-primary font-medium text-sm">{t('Newchat')}</span>}
         </div>
-        <div className="h-[1px] bg-green-120 w-full flex-shrink-0"/>
         {isOpen && <ChatList />}
         {showBanner && isOpen && <InfoBanner onClose={onCloseBanner} />}
       </div>

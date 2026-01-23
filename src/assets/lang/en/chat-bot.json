@@ -2,7 +2,7 @@
   "HelloText": "Hello!\nWhat would you like to ask today?",
   "SearchBar": "Ask anything",
   "Terms": {
-    "text": "By using {{host}} AI, you agree to our",
+    "text": "By using Internxt AI, you agree to our",
     "blueText": "Terms"
   },
   "Info": "Your data stays private. All chats are stored locally on your device.",

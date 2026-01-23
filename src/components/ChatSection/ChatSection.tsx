@@ -5,7 +5,6 @@ import { useChatContext } from './hooks/useChatContext';
 import Sidebar from './Sidebar/Sidebar';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
-import { useHostConfig } from '../../hooks/useHostConfig';
 
 const ChatSection: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -20,8 +19,8 @@ const ChatSection: React.FC = () => {
 
   return (
     <section
-      className={`flex flex-col items-center lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
-      style={{ background: isTelefonica ? 'linear-gradient(180deg, #0066FF 0%, #F4F8FF 100%)' : 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
+      className="flex flex-col items-center py-10 pt-28 lg:pb-20 px-5 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden"
+      style={{ background: 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
     >
       <div className={mainContainerClasses} ref={chatSectionRef}>
         <Sidebar />
@@ -47,7 +46,7 @@ const ChatSection: React.FC = () => {
       </div>
 
       <div 
-        className="flex flex-row border border-primary text-primary rounded-md py-3 lg:py-4 px-5 lg:px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
+        className="flex flex-row border border-primary text-primary rounded-md py-4 px-6 gap-2 items-center cursor-pointer hover:bg-primary/5 transition-colors"
         onClick={() => {
           const element = document.getElementById('chatInPrivate');
           if (element) {
@@ -55,9 +54,8 @@ const ChatSection: React.FC = () => {
           }
         }}
       >
-        <p className="flex text-primary text-base lg:font-medium">{t('Cta')}</p>
-        <ArrowDown height={24} width={24} className='hidden lg:flex' />
-        <ArrowDown height={20} width={20} className='lg:hidden flex' />
+        <p className="flex text-primary text-base font-medium">{t('Cta')}</p>
+        <ArrowDown height={24} width={24} />
       </div>
     </section>
   );

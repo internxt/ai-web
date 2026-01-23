@@ -1,5 +1,5 @@
-import { Backspace, PencilSimple, Trash, X } from 'phosphor-react';
-import { useState, useCallback, type ChangeEvent, type KeyboardEvent, useEffect } from 'react';
+import { PencilSimple, Trash, X } from 'phosphor-react';
+import { useState, useCallback, type ChangeEvent, type KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
 import type { Chat } from '../../types/chat.types';
@@ -21,7 +21,6 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
     handleDeleteChat,
     setEditingChatName,
     setIsSidebarOpen,
-    currentChatId,
   } = useChatContext();
 
   const [isHovered, setIsHovered] = useState(false);
@@ -29,26 +28,6 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const isEditing = editingChatId === chat.id;
-  const isActive=currentChatId===chat.id;
-
-  useEffect(() => {
-    const handleKeyboardShortcut = (e: globalThis.KeyboardEvent) => {
-      if (!isActive && !isHovered) return;
-
-      if ((e.metaKey || e.ctrlKey) && e.key === 'r') {
-        e.preventDefault();
-        handleRenameChat(chat.id);
-      }
-
-      if ((e.metaKey || e.ctrlKey) && e.key === 'Backspace') {
-        e.preventDefault();
-        setShowDeleteConfirm(true);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyboardShortcut);
-    return () => window.removeEventListener('keydown', handleKeyboardShortcut);
-  }, [isActive, isHovered, handleRenameChat, chat.id]);
 
   const handleClick = useCallback(() => {
     setIsSidebarOpen(!setIsSidebarOpen);
@@ -118,7 +97,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
   return (
     <>
       <div
-        className={`${isEditing? 'bg-primary/5':''} ${isActive? 'bg-primary/10':'lg:hover:bg-primary/5'} relative flex items-center justify-between  p-2 rounded-lg cursor-pointer group`}
+        className={`${isEditing?'bg-primary/10':''} relative flex items-center justify-between lg:hover:bg-primary/10 p-2 rounded-lg cursor-pointer group`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleClick}
@@ -135,13 +114,13 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
             autoFocus
           />
         ) : (
-          <p className={`text-base font-medium truncate max-w-[160px]  ${isActive? 'text-primary':'text-gray-55'} `}>{chat.name}</p>
+          <p className="text-base font-medium text-gray-55 truncate max-w-[160px]">{chat.name}</p>
         )}
 
         {(isHovered || isMenuOpen) && !isEditing && (
           <div className="lg:flex hidden relative ml-2 ">
             <button onClick={handleMenuToggle}  aria-label="Chat options">
-              <span className="text-primary font-bold">⋯</span>
+              <span className="text-gray-55 font-bold">⋯</span>
             </button>
 
             {isMenuOpen && (
@@ -153,23 +132,21 @@ const ChatItem: React.FC<ChatItemProps> = ({ chat }) => {
                     setIsMenuOpen(false);
                   }}
                 />
-                <div className="absolute right-0 top-8 bg-white border border-gray-10 rounded-lg shadow-lg z-20 w-[150px]">
+                <div className="absolute right-0 top-8 bg-white border px-3 py-1.5 border-gray-20 rounded-lg shadow-lg z-20 w-[150px]">
                   <button
                     onClick={handleRenameClick}
-                    className="w-full flex flex-row items-center justify-between gap-3 hover:bg-gray-1 text-left py-3.5 text-base text-gray-100"
+                    className="w-full flex flex-row items-center hover:bg-gray-1 gap-3 text-left py-2 text-base text-gray-100"
                   >
-                    <PencilSimple height={20} width={20} className='ml-3' />
+                    <PencilSimple height={20} width={20} />
                     {t('Tools.Rename')}
-                    <p className='text-sm font-medium text-gray-40 mr-3'>R</p>
                   </button>
                   <div className="w-full h-[1px] bg-green-120"></div>
                   <button
                     onClick={handleDeleteClick}
-                    className="w-full text-left justify-between items-center hover:bg-gray-1 flex gap-3 py-3.5 text-base text-red"
+                    className="w-full text-left hover:bg-gray-1 items-center flex gap-3 py-2 text-base text-red"
                   >
-                    <Trash height={20} width={20} className='ml-3' />
+                    <Trash height={20} width={20} />
                     {t('Tools.Delete')}
-                    <Backspace height={14} width={14} className='text-gray-40 font-medium mr-3'/>
                   </button>
                 </div>
               </>

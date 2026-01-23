@@ -3,13 +3,13 @@ import logoTelefonica from '../assets/images/Telefonica_logo.webp';
 import logoInternxt from '../assets/images/logo_dark.svg';
 
 export const useHostConfig = () => {
-  const hostname = window.location.hostname;
+  const host = window.location.host;
   const params = new URLSearchParams(window.location.search);
   const brandParam = params.get('brand');
   
   const config = useMemo(() => {
     const isTelefonica = 
-      hostname.includes('telefonica') || 
+      host === 'telefonica.ia.internxt.com' || 
       brandParam === 'telefonica';
     
     return {
@@ -20,7 +20,7 @@ export const useHostConfig = () => {
         logo: isTelefonica ? logoTelefonica : logoInternxt,
       }
     };
-  }, [hostname, brandParam]);
+  }, [host, brandParam]);
   
   return config;
 };
