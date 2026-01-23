@@ -12,16 +12,16 @@ const ChatSection: React.FC = () => {
   const { isChatActive, isSidebarOpen, hasStartedChat, setIsSidebarOpen } = useChatContext();
   const chatSectionRef = useRef<HTMLDivElement>(null);
 
-  const mainContainerClasses = useMemo(() => {
+ const mainContainerClasses = useMemo(() => {
     return isChatActive
-      ? 'bg-white h-screen  flex flex-row rounded-b-2xl lg:rounded-2xl lg:borderlg:border-green-120 w-full lg:h-[80vh] overflow-hidden transition-all duration-300 shadow-xl relative'
-      : 'bg-white/0 h-screen flex flex-row rounded-b-2xl lg:rounded-2xl border border-green-120/0 w-full lg:h-[80vh] overflow-hidden transition-all duration-300 relative';
+      ? 'bg-white h-[calc(100vh-3.5rem)] flex flex-row rounded-b-2xl lg:rounded-2xl lg:border lg:border-green-120 w-full lg:h-[80vh] overflow-hidden transition-all duration-300 shadow-xl relative'
+      : 'bg-white/0 h-[calc(100vh-3.5rem)] flex flex-row rounded-2xl border border-green-120/0 w-full lg:h-[80vh] overflow-hidden transition-all duration-300 relative';
   }, [isChatActive]);
 
     const { isTelefonica } = useHostConfig();  
     return (
       <section
-        className={`flex flex-col items-center pt-14 lg:pt-28 lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
+        className={`flex flex-col items-center pt-10 lg:pt-28 lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
         style={{ background: isTelefonica ? 'linear-gradient(180deg, #0066FF 0%, #F4F8FF 100%)' : 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
       >
         <div className={mainContainerClasses} ref={chatSectionRef}>
