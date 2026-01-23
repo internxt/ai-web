@@ -64,7 +64,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
             >
                 <img
                   loading="lazy"
-                  className={`h-[10.5px] w-24 select-none ${isTelefonica ? 'lg:h-8 lg:w-[133px]':'lg:h-3 lg:w-[110px]'} `}
+                  className={` w-24 select-none ${isTelefonica ? 'lg:h-8 lg:w-[133px]':'h-[10.5px] lg:h-3 lg:w-[110px]'} `}
                   src={assets.logo}
                   alt="Internxt logo"
                 />

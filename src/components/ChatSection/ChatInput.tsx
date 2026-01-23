@@ -46,7 +46,7 @@ const ChatInput: React.FC = () => {
       setTimeout(() => {
         const currentScroll = window.scrollY;
         window.scrollTo({
-          top: Math.max(0, currentScroll - 170), 
+          top: Math.max(0, currentScroll - 130), 
           behavior: 'smooth'
         });
       }, 100);

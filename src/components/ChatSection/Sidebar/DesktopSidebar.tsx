@@ -47,7 +47,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
           <NotePencil height={24} width={24} className="text-primary" />
           {isOpen && <span className="ml-2 text-primary font-medium text-base whitespace-nowrap">{t('Newchat')}</span>}
         </div>
-        <div className="h-[1px] bg-green-120 w-full flex-shrink-0"/>
+         {isOpen &&<div className="h-[1px] bg-green-120 w-full flex-shrink-0"/>}
         {isOpen && <ChatList />}
         {showBanner && isOpen && <InfoBanner onClose={onCloseBanner} />}
       </div>

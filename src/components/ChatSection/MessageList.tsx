@@ -8,7 +8,7 @@ import { useHostConfig } from '../../hooks/useHostConfig';
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { messages, hasStartedChat, isChatActive, isSidebarOpen, loading } = useChatContext();
+  const { hasStartedChat, isChatActive, isSidebarOpen, loading, messages } = useChatContext();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -37,6 +37,12 @@ const MessageList: React.FC = () => {
     container.addEventListener('scroll', handleScroll);
     return () => container.removeEventListener('scroll', handleScroll);
   }, [hasStartedChat]);
+
+  useEffect(()=>{
+    if(messages.length===0){
+      setShowScrollButton(false);
+    }
+  },[messages]);
 
   const scrollToBottom = () => {
     if (messagesEndRef.current && messagesContainerRef.current) {
@@ -79,14 +85,14 @@ const MessageList: React.FC = () => {
           </div>
         ) : (
           <div
-            className={`flex flex-col gap-4 lg:w-full pb-4 ${
+            className={`flex flex-col gap-3 lg:gap-4 lg:w-full pb-4 ${
               isChatActive ? 'opacity-100' : 'opacity-20'
             } transition-opacity duration-300`}
           >
             {messages.map((msg, index) => (
               <div key={index} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`p-4 rounded-lg max-w-[80%] ${
+                  className={`p-2 lg:p-4 rounded-lg max-w-[80%] ${
                     msg.type === 'user' ? 'bg-neutral-17 text-gray-100' : 'text-gray-100'
                   }`}
                 >
@@ -106,7 +112,7 @@ const MessageList: React.FC = () => {
                     src="https://lottie.host/c8f0a927-ba3b-4a55-9316-0d9165ade51b/GikTg8ggrN.lottie"
                     loop
                     autoplay
-                    style={{ width: 60, height: 60 }}
+                    style={{ width: 120, height: 120 }}
                   />
                 </div>
               </div>
@@ -118,7 +124,7 @@ const MessageList: React.FC = () => {
       </div>
 
       {showScrollButton && !isSidebarOpen && (
-        <div className="fixed bottom-1/4 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="fixed bottom-20 lg:bottom-1/4 left-1/2 transform -translate-x-1/2 z-50">
           <div
             className="h-10 w-10 border border-primary rounded-full items-center flex justify-center cursor-pointer bg-white shadow-lg hover:shadow-xl transition-all duration-200"
             onClick={scrollToBottom}
