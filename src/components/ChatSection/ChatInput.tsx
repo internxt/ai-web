@@ -7,7 +7,7 @@ import { useBrandText } from '../../utils/format-text';
 
 const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { inputValue, isChatActive, setInputValue, handleSend, setIsChatActive, loading } = useChatContext();
+  const { inputValue, isChatActive, setInputValue, handleSend, setIsChatActive, loading, isLimitReached } = useChatContext();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const hasInteractedRef = useRef(false); 
 
@@ -79,7 +79,7 @@ const ChatInput: React.FC = () => {
           ref={textareaRef}
           className="min-h-[40px] max-h-[200px] text-base w-full resize-none py-2 pr-4 lg:pr-0 outline-none focus:outline-none overflow-y-auto scrollbar-hide"
           style={{ height: 'auto' }}
-          placeholder={loading ? t('Thinking') : t('SearchBar')}
+          placeholder={isLimitReached ? t('DailyLimit') : loading ? t('Thinking') : t('SearchBar')}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
@@ -89,14 +89,14 @@ const ChatInput: React.FC = () => {
           onKeyPress={handleKeyPress}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          disabled={loading}
+          disabled={loading || isLimitReached}
           rows={1}
         />
         <div
           className={`flex border-l border-l-gray-25 h-full flex-shrink-0 items-center ${
-            loading || !inputValue.trim() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+            loading || isLimitReached || !inputValue.trim() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
           }`}
-          onClick={handleSendWrapper}
+          onClick={isLimitReached ? undefined : handleSendWrapper}
         >
           <PaperPlaneRight height={30} width={30} className="ml-3 text-neutral-90 hidden lg:flex" />
           <PaperPlaneRight height={22} width={22} className="ml-3 text-neutral-90 flex lg:hidden" />
