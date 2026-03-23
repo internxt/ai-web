@@ -41,7 +41,8 @@ export const parseMarkdown = (text: string) => {
         tableLines.push(lines[i]);
         i++;
       }
-      elements.push(renderTable(tableLines, keyCounter++));
+      elements.push(...renderTableAsParagraphs(tableLines, keyCounter));
+      keyCounter += tableLines.length;
       continue;
     }
 
@@ -60,16 +61,19 @@ export const parseMarkdown = (text: string) => {
     } else if (line.trim().startsWith('-')) {
       const listItems: string[] = [];
       while (i < lines.length && lines[i].trim().startsWith('-')) {
-        listItems.push(lines[i].trim().substring(1).trim());
+        const item = lines[i].trim().substring(1).trim();
+        if (item && !/^-+$/.test(item)) listItems.push(item);
         i++;
       }
-      elements.push(
-        <ul key={keyCounter++} className="list-disc list-inside mb-3 space-y-1 ml-2">
-          {listItems.map((item, idx) => (
-            <li key={idx}>{parseInlineFormatting(item, keyCounter)}</li>
-          ))}
-        </ul>
-      );
+      if (listItems.length > 0) {
+        elements.push(
+          <ul key={keyCounter++} className="list-disc list-inside mb-3 space-y-1 ml-2">
+            {listItems.map((item, idx) => (
+              <li key={idx}>{parseInlineFormatting(item, keyCounter)}</li>
+            ))}
+          </ul>
+        );
+      }
       continue;
     } else if (line.trim() === '---') {
       elements.push(<hr key={keyCounter++} className="my-4 border-gray-300" />);
@@ -115,7 +119,7 @@ export const parseInlineFormatting = (text: string, baseKey: number = 0) => {
   });
 };
 
-export const renderTable = (tableLines: string[], key: number) => {
+export const renderTableAsParagraphs = (tableLines: string[], baseKey: number): JSX.Element[] => {
   const rows = tableLines.map(line =>
     line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
   );
@@ -124,30 +128,15 @@ export const renderTable = (tableLines: string[], key: number) => {
   const headers = dataRows[0];
   const bodyRows = dataRows.slice(1);
 
-  return (
-    <div key={key} className="overflow-x-auto my-4">
-      <table className="min-w-full border-collapse border border-gray-300">
-        <thead className="bg-gray-200">
-          <tr>
-            {headers.map((header, idx) => (
-              <th key={idx} className="border border-gray-300 px-4 py-2 text-left font-semibold">
-                {parseInlineFormatting(header, key * 1000 + idx)}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {bodyRows.map((row, rowIdx) => (
-            <tr key={rowIdx} className="border-b border-gray-300">
-              {row.map((cell, cellIdx) => (
-                <td key={cellIdx} className="border border-gray-300 px-4 py-2">
-                  {parseInlineFormatting(cell, key * 1000 + rowIdx * 100 + cellIdx)}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+  return bodyRows.map((row, rowIdx) => {
+    const parts = headers.map((header, idx) =>
+      row[idx] ? `${header}: ${row[idx]}` : null
+    ).filter(Boolean);
+
+    return (
+      <p key={baseKey + rowIdx} className="mb-3">
+        {parseInlineFormatting(parts.join(' — '), baseKey + rowIdx)}
+      </p>
+    );
+  });
 };
