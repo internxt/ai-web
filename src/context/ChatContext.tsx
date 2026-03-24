@@ -51,6 +51,8 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [showYellowBanner, setShowYellowBanner] = useState(true);
   const [loading, setLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  
+  const isMessageAllowed = inputValue.trim() && !loading && !isLimitReached;
 
 
   const convertMessagesToAIFormat = (messages: Message[]) => {
@@ -61,7 +63,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const handleSend = useCallback(async () => {
-    if (inputValue.trim() && !loading && !isLimitReached) {
+    if (isMessageAllowed) {
       const userMessage: Message = {
         type: 'user',
         text: inputValue,
