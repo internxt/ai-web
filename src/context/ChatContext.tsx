@@ -1,6 +1,7 @@
 import { createContext, type ReactNode, useState, useCallback } from 'react';
 import type { Chat, Message } from '../types/chat.types';
 import { useChatStorage } from '../components/ChatSection/hooks/useChatStorage';
+import { useMessageLimit } from '../components/ChatSection/hooks/useMessageLimit';
 import { useTranslation } from 'react-i18next';
 import { aiService } from '../services/ai';
 
@@ -17,6 +18,7 @@ interface ChatContextType {
   showYellowBanner: boolean;
   loading: boolean;
   isTyping: boolean;
+  isLimitReached: boolean;
   setIsTyping: (typing: boolean) => void;
   setInputValue: (value: string) => void;
   setIsChatActive: (active: boolean) => void;
@@ -37,6 +39,7 @@ const ChatContext = createContext<ChatContextType | undefined>(undefined);
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
   useTranslation('chat-bot');
   const [chats, setChats] = useChatStorage();
+  const { isLimitReached, incrementCount } = useMessageLimit();
   const [currentChatId, setCurrentChatId] = useState<number | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -48,6 +51,8 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [showYellowBanner, setShowYellowBanner] = useState(true);
   const [loading, setLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  
+  const isMessageAllowed = inputValue.trim() && !loading && !isLimitReached;
 
 
   const convertMessagesToAIFormat = (messages: Message[]) => {
@@ -58,7 +63,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const handleSend = useCallback(async () => {
-    if (inputValue.trim() && !loading) {
+    if (isMessageAllowed) {
       const userMessage: Message = {
         type: 'user',
         text: inputValue,
@@ -88,6 +93,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       setHasStartedChat(true);
       setInputValue('');
       setLoading(true);
+      incrementCount();
 
       try {
         const allMessages = chatId === currentChatId ? [...messages, userMessage] : [userMessage];
@@ -125,7 +131,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         setLoading(false);
       }
     }
-  }, [inputValue, currentChatId, chats, messages, loading, setChats]);
+  }, [inputValue, currentChatId, chats, messages, loading, isLimitReached, incrementCount, setChats]);
 
   const handleNewChat = useCallback(() => {
     setHasStartedChat(false);
@@ -200,6 +206,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     showYellowBanner,
     loading,
     isTyping,
+    isLimitReached,
     setIsTyping,
     setInputValue,
     setIsChatActive,
