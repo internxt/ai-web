@@ -2,7 +2,11 @@ export const Domains = {
   website: 'https://internxt.com',
   ai: 'https://ai.internxt.com',
   invalid: 'ia.internxt.com',
+  telefonica: 'ai.telefonica.com',
+  telefonicaSubdomain: 'telefonica.ia.internxt.com',
 } as const;
+
+
 
 export const Routes = {
   pricing: `${Domains.website}/pricing`,

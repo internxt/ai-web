@@ -2,8 +2,8 @@ import { PaperPlaneRight } from 'phosphor-react';
 import { useCallback, useRef, type KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
-import { useHostConfig } from '../../hooks/useHostConfig';
 import { useBrandText } from '../../utils/format-text';
+
 
 const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -53,13 +53,13 @@ const ChatInput: React.FC = () => {
     }
   }, [setIsChatActive]);
 
-  const { isTelefonica } = useHostConfig();
   const replaceBrandName = useBrandText();
 
   const getTextColor = () => {
-    if (!isTelefonica) return 'text-gray-35';
-    return isChatActive ? 'text-gray-35' : 'text-white';
+    return 'text-gray-35';
   };
+
+
 
   const handleBlur = useCallback(() => {
     if (hasInteractedRef.current) {

@@ -9,7 +9,6 @@ import LanguageMobileBox from './LanguageMobileBox';
 import { cleanTrackingParams } from '../../utils/urlHelper';
 import { useHostConfig } from '../../hooks/useHostConfig';
 
-
 export default function Navbar({ darkMode = false, fixed = false, hide = false, isLinksHidden = false, hideCTA = false }) {
   const [menuState, setMenuState] = useState(false);
   const [scrolled, setScrolled] = useState(true);
@@ -40,7 +39,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
 
     window.location.href = cleanUrl;
   };
-  const { assets, isTelefonica } = useHostConfig();
+  const { assets } = useHostConfig();
 
   return (
     <div
@@ -64,7 +63,7 @@ export default function Navbar({ darkMode = false, fixed = false, hide = false, 
             >
                 <img
                   loading="lazy"
-                  className={` w-24 select-none ${isTelefonica ? 'lg:h-8 lg:w-[133px]':'h-[10.5px] lg:h-3 lg:w-[110px]'} `}
+                  className="w-24 select-none h-[10.5px] lg:h-3 lg:w-[110px]"
                   src={assets.logo}
                   alt="Internxt logo"
                 />

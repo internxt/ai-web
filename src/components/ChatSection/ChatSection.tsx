@@ -5,8 +5,6 @@ import { useChatContext } from './hooks/useChatContext';
 import Sidebar from './Sidebar/Sidebar';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
-import { useHostConfig } from '../../hooks/useHostConfig';
-
 const ChatSection: React.FC = () => {
   const { t } = useTranslation('chat-bot');
   const { isChatActive, isSidebarOpen, hasStartedChat, setIsSidebarOpen } = useChatContext();
@@ -18,11 +16,10 @@ const ChatSection: React.FC = () => {
       : 'bg-white/0 h-[calc(100vh-3.5rem)] flex flex-row rounded-2xl border border-green-120/0 w-full lg:h-[80vh] overflow-hidden transition-all duration-300 relative';
   }, [isChatActive]);
 
-    const { isTelefonica } = useHostConfig();  
     return (
       <section
         className={`flex flex-col items-center pt-10 lg:pt-28 lg:pb-20 lg:px-10 xl:px-32 3xl:px-80 gap-10 overflow-x-hidden`}
-        style={{ background: isTelefonica ? 'linear-gradient(180deg, #0066FF 0%, #F4F8FF 100%)' : 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #CCE0FF 0%, #F4F8FF 100%)' }}
       >
         <div className={mainContainerClasses} ref={chatSectionRef}>
           <Sidebar />
