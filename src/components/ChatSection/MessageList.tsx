@@ -55,10 +55,7 @@ const MessageList: React.FC = () => {
     }
   };
 
-  const getTextColor = () => {
-    return '';
-  };
-
+ 
 
   return (
     <>
@@ -72,7 +69,6 @@ const MessageList: React.FC = () => {
             <span className="text-xl lg:text-3xl font-semibold leading-tight text-center flex flex-col">
               <p 
                 className={`
-                  ${getTextColor()} 
                   whitespace-pre-line 
                   transition-all 
                   duration-700 
