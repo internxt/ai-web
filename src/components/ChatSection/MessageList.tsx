@@ -4,7 +4,7 @@ import { ArrowDown } from '@phosphor-icons/react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useChatContext } from './hooks/useChatContext';
 import { parseMarkdown } from '../../utils/format-text';
-import { useHostConfig } from '../../hooks/useHostConfig';
+
 
 const MessageList: React.FC = () => {
   const { t } = useTranslation('chat-bot');
@@ -12,7 +12,8 @@ const MessageList: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const { isTelefonica } = useHostConfig();
+
+
 
   useEffect(() => {
     if (messages.length > 0 && messagesEndRef.current && messagesContainerRef.current) {
@@ -54,10 +55,7 @@ const MessageList: React.FC = () => {
     }
   };
 
-  const getTextColor = () => {
-    if (!isTelefonica) return '';
-    return isChatActive ? 'text-gray-95' : 'text-white';
-  };
+ 
 
   return (
     <>
@@ -71,7 +69,6 @@ const MessageList: React.FC = () => {
             <span className="text-xl lg:text-3xl font-semibold leading-tight text-center flex flex-col">
               <p 
                 className={`
-                  ${getTextColor()} 
                   whitespace-pre-line 
                   transition-all 
                   duration-700 
