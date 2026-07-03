@@ -39,8 +39,27 @@ function App() {
 
         const newUrl = Domains.ai;
       location.replace(newUrl);
+      return;
     }
 
+    const url = new URL(window.location.href);
+    const parametersToClear = ['_gl', '_gcl_au', '_ga'];
+    let hadChanges = false;
+    
+    parametersToClear.forEach( (param) => {
+      if (url.searchParams.has(param)) {
+        url.searchParams.delete(param);
+        hadChanges = true;
+      }
+    })
+
+    if(hadChanges) {
+      const newUrl = url.searchParams.toString()
+        ? `${url.pathname}?${url.searchParams.toString()}${url.hash}` 
+        : `${url.pathname}${url.hash}`;
+      
+      window.history.replaceState({}, document.title, newUrl);
+    }
   }, []);
 
   return (
