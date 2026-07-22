@@ -1,15 +1,18 @@
 import { PaperPlaneRight } from 'phosphor-react';
-import { useCallback, useRef, type KeyboardEvent } from 'react';
+import { useCallback, useRef, useState, type KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChatContext } from './hooks/useChatContext';
 import { useBrandText } from '../../utils/format-text';
+import Turnstile from '../Turnstile/Turnstile';
 
 
 const ChatInput: React.FC = () => {
   const { t } = useTranslation('chat-bot');
-  const { inputValue, isChatActive, setInputValue, handleSend, setIsChatActive, loading, isLimitReached } = useChatContext();
+  const { inputValue, setInputValue, handleSend, setIsChatActive, isChatActive, loading, isLimitReached } =
+    useChatContext();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const hasInteractedRef = useRef(false); 
+  const hasInteractedRef = useRef(false);
+  const [turnstileVerified, setTurnstileVerified] = useState(false);
 
   const resetTextareaHeight = useCallback(() => {
     if (textareaRef.current) {
@@ -74,6 +77,14 @@ const ChatInput: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-2 items-center px-4 lg:px-40 pb-8">
+      {isChatActive && !turnstileVerified && (
+        <>
+          <div className="fixed inset-0 z-40 bg-black/60" />
+          <div className="relative z-50">
+            <Turnstile onVerify={() => setTurnstileVerified(true)} />
+          </div>
+        </>
+      )}
       <div className="flex flex-row w-full lg:w-full bg-white border border-gray-25 rounded-lg items-center py-0.5 lg:py-2 px-4 transition-shadow duration-300">
         <textarea
           ref={textareaRef}
