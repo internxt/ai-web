@@ -1,3 +1,5 @@
+import { getTurnstileToken } from './turnstile';
+
 const AI_API_URL = import.meta.env.VITE_AI_SERVER_URL;
 const AI_SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
 
@@ -48,10 +50,13 @@ export const aiService = {
         ...messages
       ];
 
+      const turnstileToken = getTurnstileToken();
+
       const response = await fetch(AI_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(turnstileToken ? { 'X-Turnstile-Token': turnstileToken } : {}),
         },
         body: JSON.stringify({
           messages: finalMessages,
